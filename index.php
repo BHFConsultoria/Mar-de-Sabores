@@ -14,6 +14,12 @@
                 <tr>
                     <td class="col-md-6">E-mail:<input type="text" name="nmEmail" id="nmEmail"></td>
                     <td class="col-md-6">Senha:<input type="password" name="dsSenha" id="dsSenha"></td>
+                    <td class="col-md-6">Selecione:
+                        <select name="tpUsuario" id="tpUsuario">
+                            <option value="cliente">Cliente</option>
+                            <option value="confeiteiro">Confeiteiro</option>
+                        </select>
+                    </td>
                     <td class="col-md-6"><input type="submit" name="enviar" id="enviar"></td>
                 </tr>
             </form>

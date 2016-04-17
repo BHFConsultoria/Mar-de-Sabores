@@ -11,11 +11,11 @@ class LoginBO {
         $this->dao = new LoginDAO();
     }
 
-    function verificaLogin($nmEmail,$dsSenha){        
+    function verificaLogin($nmEmail,$dsSenha,$tpUsuario){        
         $this->setNmEmail($nmEmail);
         $this->setDsSenha($dsSenha);
         
-        $resultado = $this->dao->verificaLogin($this->nmEmail, $this->dsSenha);
+        $resultado = $this->dao->verificaLogin($this->nmEmail, $this->dsSenha,$tpUsuario);
         
         if(empty($resultado)){
             echo "usuário nao encontrado";

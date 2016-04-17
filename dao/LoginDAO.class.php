@@ -8,12 +8,10 @@ class LoginDAO {
         $this->con = new Conexao();
     }
 
-    function verificaLogin($nmEmail, $dsSenha) {
+    function verificaLogin($nmEmail, $dsSenha,$tpUsuario) {
         try {
-            $query = "SELECT * FROM cliente WHERE nm_email = ? AND ds_senha = ?";
-            /**
-             * @var PDO Description
-             */
+            $query = "SELECT * FROM {$tpUsuario} WHERE nm_email = ? AND ds_senha = ?";
+
             $pdo = $this->con->getConexao()->prepare($query);
             $pdo->bindValue(1, "$nmEmail");
             $pdo->bindValue(2, "$dsSenha");
