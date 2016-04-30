@@ -16,6 +16,7 @@
                     <td class="col-md-6">Senha:<input type="password" name="dsSenha" id="dsSenha"></td>
                     <td class="col-md-6">Selecione:
                         <select name="tpUsuario" id="tpUsuario">
+                            <option value=""></option>
                             <option value="cliente">Cliente</option>
                             <option value="confeiteiro">Confeiteiro</option>
                         </select>

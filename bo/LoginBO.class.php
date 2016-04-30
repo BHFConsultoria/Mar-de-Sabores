@@ -21,6 +21,7 @@ class LoginBO {
             echo "usuário nao encontrado";
         }else{
             echo "usuário encontrado";
+            var_dump(md5($resultado[0]['ds_senha']));
         }
         
     }
