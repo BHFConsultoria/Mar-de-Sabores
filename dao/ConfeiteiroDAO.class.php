@@ -46,5 +46,40 @@ class ConfeiteiroDAO {
             echo $e->getCode(),$e->getMessage(),$e->getFile(),$e->getLine();
         }
     }
+    
+    function listarConfeiteiros(){
+        try{
+            $query = "SELECT * FROM confeiteiro";
+            
+            $pdo = $this->con->getConexao()->prepare($query);
+            
+            $pdo->execute();
+            
+            $resultado = $pdo->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $resultado;
+            
+        } catch (Exception $e) {
+            echo $e->getCode(),$e->getMessage(),$e->getFile(),$e->getLine();
+        }
+    }
+    
+    function alterarConfeiteiro($bean){
+        
+    }
+    
+    function deletarConfeiteiro($cdConfeiteiro){
+        try{
+            $query = "DELETE FROM confeiteiro WHERE cd_confeiteiro = ?";
+            
+            $pdo = $this->con->getConexao()->prepare($query);
+            $pdo->bindValue(1, $cdConfeiteiro);
+            
+            $pdo->execute();
+            
+        } catch (Exception $ex) {
 
+        }
+    }
+    
 }

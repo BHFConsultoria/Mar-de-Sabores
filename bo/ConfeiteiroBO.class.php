@@ -14,6 +14,10 @@ class ConfeiteiroBO {
         return $this->dao->cadastrarConfeiteiro($bean);
         
     }
+    
+    function deletarConfeiteiro($cdConfeiteiro){
+        $this->dao->deletarConfeiteiro($cdConfeiteiro);
+    }
 
     /** Função para popular os atributos, retornando um objetos com os dados
       tratados pelos metodos setters */

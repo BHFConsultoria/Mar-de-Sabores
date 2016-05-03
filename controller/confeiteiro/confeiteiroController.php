@@ -25,18 +25,21 @@ $dados= [
     'sgSexo' => $_POST['sgSexo']
 ];
 
-$acao = $_POST['btnCadastrar'];
-
+$acao;
+//Para alterar, fazer um findByPk
 switch ($acao){
     
     case 'cadastrar':
         $bean = $bo->populaBean($dados);
         $bo->cadastrarConfeiteiro($bean);
     break;
-
+    
     case 'alterar':
         $bean = $bo->populaBean($dados);
-        $bo->alterarConfeiteiro($bean);
+    break;
+
+    case 'deletar':
+        $bo->deletarConfeiteiro($cdConfeiteiro);
     break;
     
 }
