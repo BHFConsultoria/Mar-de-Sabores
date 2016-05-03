@@ -24,6 +24,10 @@
                     <td class="col-md-6"><input type="submit" name="enviar" id="enviar"></td>
                 </tr>
             </form>
+            
+            <tr>
+                <td><a href="view/usuario/usuario.php">cadastro</a></td>
+            </tr>
         </table>
     </body>
 </html>
