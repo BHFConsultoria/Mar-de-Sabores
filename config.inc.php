@@ -4,7 +4,7 @@
 
 function __autoload($Class) {
     
-    $cDir = ['bo','dao','conexao'];
+    $cDir = ['bo','dao','bean','conexao'];
     $iDir = null;
     
     foreach($cDir as $dirName){

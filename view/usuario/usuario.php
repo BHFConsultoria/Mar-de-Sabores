@@ -6,97 +6,97 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form name="Cadastro" action="../controller/CadastroClienteController.php" Method="" >
+        <form name="Cadastro" action="../../controller/cliente/clienteController.php" Method="POST" >
             <table border = "1">
                 <tr>
                     <td>
-                        Nome:<input type="text" name="txtNome" />
+                        Nome:<input type="text" name="nmCliente" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        E-mail:<input type="text" name="txtEmail" />
+                        E-mail:<input type="text" name="nmEmail" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Senha:<input type="text" name="txtSenha" />
+                        Senha:<input type="text" name="dsSenha" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Razão Social:<input type="text" name="txtRazaoSocial" />
+                        Razão Social:<input type="text" name="nmRazaoSocial" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Nome Fantasia:<input type="text" name="txtNomeFantasia" />
+                        Nome Fantasia:<input type="text" name="nmFantasia" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        CPF:<input type="text" name="txtCpf" />
+                        CPF:<input type="text" name="cdCpf" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        CNPJ:<input type="text" name="txtCnpj" />
+                        CNPJ:<input type="text" name="cdCnpj" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Inscrição Estadual:<input type="text" name="txtIE" />
+                        Inscrição Estadual:<input type="text" name="cdInscricaoEstadual" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Data de Nascimento:<input type="text" name="txtNome" />
+                        Data de Nascimento:<input type="date" name="dtNascimento" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Telefone:<input type="text" name="txtTelefone" />
+                        Telefone:<input type="text" name="cdTelefone" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Celular:<input type="text" name="txtCelular" />
+                        Celular:<input type="text" name="cdCelular" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Logradouro:<input type="text" name="txtLogradouro" />
+                        Logradouro:<input type="text" name="nmLogradouro" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Complemento:<input type="text" name="txtComplemento" />
+                        Complemento:<input type="text" name="nmComplemento" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Cidade:<input type="text" name="txtCidade" />
+                        Cidade:<input type="text" name="nmCidade" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        Bairro:<input type="text" name="txtBairro" />
+                        Bairro:<input type="text" name="nmBairro" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        CEP:<input type="text" name="txtCEP" />
+                        CEP:<input type="text" name="cdCep" />
                     </td>
                 <tr>
                 </tr>
                     <td>
-                        UF:<input type="text" name="txtUF" />
+                        UF:<input type="text" name="sgUf" />
                     </td>
                 <tr>
                 </tr>
                 <tr>
                     <td>
-                        Sexo:<input type="text" name="txtSexo" />
+                        Sexo:<input type="text" name="sgSexo" />
                     </td>
                 </tr>
                 <tr>
@@ -104,7 +104,7 @@
                         <input type="submit" name="btnCadastrar" value="cadastrar" />
                     </td>
                 </tr>
-            </table>            
+            </table>           
         </form>
     </body>
 </html>
