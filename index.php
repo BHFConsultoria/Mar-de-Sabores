@@ -26,8 +26,8 @@
             </form>
             
             <tr>
-                <td><a href="view/usuario/usuario.php">cadastro</a></td>
-                <td><a href="view/usuario/listaConfeiteiro.php">Listar Confeiteiros</a></td>
+                <td><a href="view/confeiteiro/confeiteiro.php">cadastro</a></td>
+                <td><a href="view/confeiteiro/listaConfeiteiro.php">Listar Confeiteiros</a></td>
             </tr>
         </table>
     </body>

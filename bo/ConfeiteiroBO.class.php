@@ -1,6 +1,6 @@
 <?php
 
-class ConfeiteiroBO {
+class ConfeiteiroBO extends AbstractBO {
 
     private $dao;
 
@@ -8,15 +8,9 @@ class ConfeiteiroBO {
         $this->dao = new ConfeiteiroDAO();
     }
 
-    //----------Funções Sistemas----------//
     function cadastrarConfeiteiro($bean) {
-        
+
         return $this->dao->cadastrarConfeiteiro($bean);
-        
-    }
-    
-    function deletarConfeiteiro($cdConfeiteiro){
-        $this->dao->deletarConfeiteiro($cdConfeiteiro);
     }
 
     /** Função para popular os atributos, retornando um objetos com os dados
@@ -24,27 +18,34 @@ class ConfeiteiroBO {
     function populaBean($dados) {
 
         $bean = new ConfeiteiroBean();
-
-        $bean->setNmConfeiteiro($dados['nmConfeiteiro']);
-        $bean->setNmEmail($dados['nmEmail']);
-        $bean->setDsSenha($dados['dsSenha']);
-        $bean->setNmRazaoSocial($dados['nmRazaoSocial']);
-        $bean->setNmFantasia($dados['nmFantasia']);
-        $bean->setCdCpf($dados['cdCpf']);
-        $bean->setCdCnpj($dados['cdCnpj']);
-        $bean->setCdInscricaoEstadual($dados['cdInscricaoEstadual']);
-        $bean->setDtNascimento($dados['dtNascimento']);
-        $bean->setCdTelefone($dados['cdTelefone']);
-        $bean->setCdCelular($dados['cdCelular']);
-        $bean->setNmLogradouro($dados['nmLogradouro']);
-        $bean->setNmComplemento($dados['nmComplemento']);
-        $bean->setNmCidade($dados['nmCidade']);
-        $bean->setNmBairro($dados['nmBairro']);
-        $bean->setCdCep($dados['cdCep']);
-        $bean->setSgUf($dados['sgUf']);
-        $bean->setSgSexo($dados['sgSexo']);
+        if ($dados['cd_confeiteiro'] != '') {
+            $bean->setCdConfeiteiro($dados['cd_confeiteiro']);
+        }
+        $bean->setNmConfeiteiro($dados['nm_confeiteiro']);
+        $bean->setNmEmail($dados['nm_email']);
+        $bean->setDsSenha($dados['ds_senha']);
+        $bean->setNmRazaoSocial($dados['nm_razao_social']);
+        $bean->setNmFantasia($dados['nm_fantasia']);
+        $bean->setCdCpf($dados['cd_cpf']);
+        $bean->setCdCnpj($dados['cd_cnpj']);
+        $bean->setCdInscricaoEstadual($dados['cd_inscricao_estadual']);
+        $bean->setDtNascimento($dados['dt_nascimento']);
+        $bean->setCdTelefone($dados['cd_telefone']);
+        $bean->setCdCelular($dados['cd_celular']);
+        $bean->setNmLogradouro($dados['nm_logradouro']);
+        $bean->setNmComplemento($dados['nm_complemento']);
+        $bean->setNmCidade($dados['nm_cidade']);
+        $bean->setNmBairro($dados['nm_bairro']);
+        $bean->setCdCep($dados['cd_cep']);
+        $bean->setSgUf($dados['sg_uf']);
+        $bean->setSgSexo($dados['sg_sexo']);
+        $bean->setNmSituacao($dados['nm_situacao']);
 
         return $bean;
+    }
+
+    protected function getDAO() {
+        return $this->dao;
     }
 
 }

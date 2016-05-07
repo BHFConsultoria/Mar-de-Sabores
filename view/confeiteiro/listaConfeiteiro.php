@@ -15,23 +15,23 @@ include_once '../../controller/confeiteiro/confeiteiro.php';
             <td>Email</td>
             <td>Senha</td>
         </tr>
-        <?php foreach($confeiteiros as $confeiteiro){ ?>
+        <?php foreach($usuarios as $usuario){ ?>
         <tr>
-            <td><?=$confeiteiro['cd_confeiteiro']?></td>
-            <td><?=$confeiteiro['nm_confeiteiro']?></td>
-            <td><?=$confeiteiro['nm_email']?></td>
-            <td><?=$confeiteiro['ds_senha']?></td>
+            <td><?=$usuario['cd_confeiteiro']?></td>
+            <td><?=$usuario['nm_confeiteiro']?></td>
+            <td><?=$usuario['nm_email']?></td>
+            <td><?=$usuario['ds_senha']?></td>
             <td>
             <form action="../../controller/confeiteiro/confeiteiroController.php" method ="POST">
-                <input type="hidden" name="acao" value="alterar"/>
-                <input type="hidden" name="cdConfeiteiro" value="<?=$confeiteiro['cd_confeiteiro']?>"/>
+                <input type="hidden" name="acao" value="alterarDados"/>
+                <input type="hidden" name="cdConfeiteiro" value="<?=$usuario['cd_confeiteiro']?>"/>
                 <button class="btn btn-primary">Alterar</button>
             </form>
             </td>
             <td>
             <form action="../../controller/confeiteiro/confeiteiroController.php" method ="POST">
                 <input type="hidden" name="acao" value="deletar"/>
-                <input type="hidden" name="cdConfeiteiro" value="<?=$confeiteiro['cd_confeiteiro']?>"/>
+                <input type="hidden" name="cdConfeiteiro" value="<?=$usuario['cd_confeiteiro']?>"/>
                 <button class="btn btn-danger">Remover</button>
             </form>
             </td>

@@ -2,6 +2,7 @@
 
 class ConfeiteiroBean {
     
+    private $cdConfeiteiro;
     private $nmConfeiteiro;
     private $nmEmail;
     private $dsSenha;
@@ -20,7 +21,12 @@ class ConfeiteiroBean {
     private $cdCep;
     private $sgUf;
     private $sgSexo; 
+    private $nmSituacao;
     
+    function getCdConfeiteiro() {
+        return $this->cdConfeiteiro;
+    }
+
     function getNmConfeiteiro() {
         return $this->nmConfeiteiro;
     }
@@ -92,7 +98,15 @@ class ConfeiteiroBean {
     function getSgSexo() {
         return $this->sgSexo;
     }
-
+    
+    function getNmSituacao() {
+        return $this->nmSituacao;
+    }
+    
+    function setCdConfeiteiro($cdConfeiteiro) {
+        $this->cdConfeiteiro = $cdConfeiteiro;
+    }
+    
     function setNmConfeiteiro($nmConfeiteiro) {
         $this->nmConfeiteiro = $nmConfeiteiro;
     }
@@ -164,6 +178,11 @@ class ConfeiteiroBean {
     function setSgSexo($sgSexo) {
         $this->sgSexo = $sgSexo;
     }
+     
+    function setNmSituacao($nmSituacao) {
+        $this->nmSituacao = $nmSituacao;
+    }
+
 
 
 }

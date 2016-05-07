@@ -3,43 +3,53 @@
 require_once '../../config.inc.php';
 
 $bo = new ConfeiteiroBO();
+$dao = new ConfeiteiroDAO();
 
-$dados= [
-    'nmConfeiteiro' => $_POST['nmConfeiteiro'],
-    'nmEmail' => $_POST['nmEmail'],
-    'dsSenha' => $_POST['dsSenha'],
-    'nmRazaoSocial' => $_POST['nmRazaoSocial'],
-    'nmFantasia' => $_POST['nmFantasia'],
-    'cdCpf' => $_POST['cdCpf'],
-    'cdCnpj' => $_POST['cdCnpj'],
-    'cdInscricaoEstadual' => $_POST['cdInscricaoEstadual'],
-    'dtNascimento' => $_POST['dtNascimento'],
-    'cdTelefone' => $_POST['cdTelefone'],
-    'cdCelular' => $_POST['cdCelular'],
-    'nmLogradouro' => $_POST['nmLogradouro'],
-    'nmComplemento' => $_POST['nmComplemento'],
-    'nmCidade' => $_POST['nmCidade'],
-    'nmBairro' => $_POST['nmBairro'],
-    'cdCep' => $_POST['cdCep'],
-    'sgUf' => $_POST['sgUf'],
-    'sgSexo' => $_POST['sgSexo']
-];
+$acao = $_POST['acao'];
 
-$acao;
-//Para alterar, fazer um findByPk
-switch ($acao){
-    
+if ($acao == 'cadastrar') {
+    $dados = [
+        'cd_confeiteiro' => '',
+        'nm_confeiteiro' => $_POST['nmConfeiteiro'],
+        'nm_email' => $_POST['nmEmail'],
+        'ds_senha' => $_POST['dsSenha'],
+        'nm_razao_social' => $_POST['nmRazaoSocial'],
+        'nm_fantasia' => $_POST['nmFantasia'],
+        'cd_cpf' => $_POST['cdCpf'],
+        'cd_cnpj' => $_POST['cdCnpj'],
+        'cd_inscricao_estadual' => $_POST['cdInscricaoEstadual'],
+        'dt_nascimento' => $_POST['dtNascimento'],
+        'cd_telefone' => $_POST['cdTelefone'],
+        'cd_celular' => $_POST['cdCelular'],
+        'nm_logradouro' => $_POST['nmLogradouro'],
+        'nm_complemento' => $_POST['nmComplemento'],
+        'nm_cidade' => $_POST['nmCidade'],
+        'nm_bairro' => $_POST['nmBairro'],
+        'cd_cep' => $_POST['cdCep'],
+        'sg_uf' => $_POST['sgUf'],
+        'sg_sexo' => $_POST['sgSexo'],
+        'nm_situacao' => 'A'
+    ];
+}
+
+switch ($acao) {
+
     case 'cadastrar':
         $bean = $bo->populaBean($dados);
         $bo->cadastrarConfeiteiro($bean);
-    break;
-    
-    case 'alterar':
-        $bean = $bo->populaBean($dados);
-    break;
+        break;
 
-    case 'deletar':
-        $bo->deletarConfeiteiro($cdConfeiteiro);
-    break;
+    case 'alterar':
+        $resultado = $dao->findByPk($_POST['cdConfeiteiro']);
+        $bean = $bo->populaBean($resultado[0]);
+        var_dump($bean);
+        break;
     
+        
+    //Case para carregar os dados no formulário para fazer alteração.
+    case 'alterarDados':
+        $usuario = $dao->findByPk($_POST['cdConfeiteiro']);
+        $bean = $bo->populaBean($usuario[0]);
+        include_once'../../view/usuario/alterar.php';
+        break;
 }
