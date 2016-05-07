@@ -6,9 +6,7 @@ class Conexao {
     private static $user = 'root';
     private static $pass = '';
     private static $db = 'mar_de_sabores';
-    /**
-     * @var PDO
-     */
+    /** @var PDO */
     private static $connect = null;
 
     private static function conectar() {

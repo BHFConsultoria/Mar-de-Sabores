@@ -16,6 +16,7 @@
                     <td class="col-md-6">Senha:<input type="password" name="dsSenha" id="dsSenha"></td>
                     <td class="col-md-6">Selecione:
                         <select name="tpUsuario" id="tpUsuario">
+                            <option value=""></option>
                             <option value="cliente">Cliente</option>
                             <option value="confeiteiro">Confeiteiro</option>
                         </select>
@@ -23,6 +24,11 @@
                     <td class="col-md-6"><input type="submit" name="enviar" id="enviar"></td>
                 </tr>
             </form>
+            
+            <tr>
+                <td><a href="view/confeiteiro/confeiteiro.php">cadastro</a></td>
+                <td><a href="view/confeiteiro/listaConfeiteiro.php">Listar Confeiteiros</a></td>
+            </tr>
         </table>
     </body>
 </html>
