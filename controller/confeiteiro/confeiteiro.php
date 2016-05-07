@@ -2,6 +2,8 @@
 
 require_once '../../config.inc.php';
 
-$dao = new ConfeiteiroDAO();
+$bo = new ConfeiteiroBO();
 
-$confeiteiros = $dao->listarConfeiteiros();
+$usuarios = $bo->listAll();
+
+

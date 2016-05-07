@@ -1,6 +1,6 @@
 <?php
 
-class ConfeiteiroDAO {
+class ConfeiteiroDAO extends AbstractDAO{
 
     private $con;
 
@@ -13,8 +13,8 @@ class ConfeiteiroDAO {
             $query = "INSERT INTO confeiteiro (nm_confeiteiro,nm_email,ds_senha,"
                     . "nm_razao_social,nm_fantasia,cd_cpf,cd_cnpj,cd_inscricao_estadual,"
                     . "dt_nascimento,cd_telefone,cd_celular,nm_logradouro,nm_complemento,"
-                    . "nm_cidade,nm_bairro,cd_cep,sg_uf,sg_sexo) "
-                    . "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    . "nm_cidade,nm_bairro,cd_cep,sg_uf,sg_sexo,nm_situacao) "
+                    . "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             $pdo = $this->con->getConexao()->prepare($query);
 
@@ -36,6 +36,7 @@ class ConfeiteiroDAO {
             $pdo->bindValue(16, $bean->getCdCep());
             $pdo->bindValue(17, $bean->getSgUf());
             $pdo->bindValue(18, $bean->getSgSexo());
+            $pdo->bindValue(19, $bean->getNmSituacao());
 
             $pdo->execute();
             
@@ -46,40 +47,17 @@ class ConfeiteiroDAO {
             echo $e->getCode(),$e->getMessage(),$e->getFile(),$e->getLine();
         }
     }
-    
-    function listarConfeiteiros(){
-        try{
-            $query = "SELECT * FROM confeiteiro";
-            
-            $pdo = $this->con->getConexao()->prepare($query);
-            
-            $pdo->execute();
-            
-            $resultado = $pdo->fetchAll(PDO::FETCH_ASSOC);
-            
-            return $resultado;
-            
-        } catch (Exception $e) {
-            echo $e->getCode(),$e->getMessage(),$e->getFile(),$e->getLine();
-        }
+  
+    protected function getTabela() {
+        return "confeiteiro";
     }
-    
-    function alterarConfeiteiro($bean){
-        
-    }
-    
-    function deletarConfeiteiro($cdConfeiteiro){
-        try{
-            $query = "DELETE FROM confeiteiro WHERE cd_confeiteiro = ?";
-            
-            $pdo = $this->con->getConexao()->prepare($query);
-            $pdo->bindValue(1, $cdConfeiteiro);
-            
-            $pdo->execute();
-            
-        } catch (Exception $ex) {
 
-        }
+    protected function getPk() {
+        return "cd_confeiteiro";
     }
-    
+
+    protected function getCon() {
+        return $this->con;
+    }
+
 }
