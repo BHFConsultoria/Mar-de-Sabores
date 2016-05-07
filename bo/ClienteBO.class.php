@@ -1,6 +1,6 @@
 <?php
 
-class ClienteBO {
+class ClienteBO extends AbstractBO {
     private $dao;
     
       function __construct() {
@@ -48,5 +48,8 @@ class ClienteBO {
       
   }
 
-        
+    protected function getDAO() {
+        return $this->dao;
+    }
+
 }

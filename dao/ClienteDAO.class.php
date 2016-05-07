@@ -1,6 +1,6 @@
 <?php
 
-class ClienteDAO {
+class ClienteDAO extends AbstractDAO {
     private $con;
     
     function __construct() {
@@ -9,7 +9,7 @@ class ClienteDAO {
 
     function desativarCliente($bean){
         try {
-            $query = "UPDATE SET nm_situacao WHERE cd_cliente = ?";
+            $query = "UPDATE SET nm_situacao = 'D' WHERE cd_cliente = ?";
             $pdo = $this->con->getConexao()->prepare($query);
             
             $pdo->bindValue(1, $bean->getCdCliente());
@@ -59,4 +59,19 @@ VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,? )";
             echo $ex->getCode(),$ex->getMessage(),$ex->getFile(),$ex->getLine();
         }  
     }
+    
+    protected function getTabela() {
+        return "cliente";
+    }
+
+    protected function getCon() {
+        return "cd_cliente";
+    }
+
+    protected function getPk() {
+        return $this->con;
+    }
+
 }
+
+    
