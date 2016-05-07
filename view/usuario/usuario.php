@@ -101,7 +101,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" name="btnCadastrar" value="cadastrar" />
+                        <input type="submit" name="acao" value="cadastrar" />
                     </td>
                 </tr>
             </table>           

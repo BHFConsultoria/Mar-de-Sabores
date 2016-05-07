@@ -3,6 +3,9 @@
 require_once '../../config.inc.php';
 $bo = new ClienteBO();
 
+$acao = $_POST['acao'];
+
+if ($acao == 'cadastrar'){
 $dados=[
 'cd_cliente' => '', 
 'nm_cliente' => $_POST['nmCliente'],
@@ -21,7 +24,8 @@ $dados=[
 'cd_celular' => $_POST['cdCelular'],
 'nm_situacao' => 'A'
 ];
-$acao = $_POST['btnCadastrar'];
+}
+
     
 var_dump($dados);
 switch ($acao) {
