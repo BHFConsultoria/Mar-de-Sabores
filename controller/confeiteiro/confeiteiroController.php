@@ -3,7 +3,6 @@
 require_once '../../config.inc.php';
 
 $bo = new ConfeiteiroBO();
-$dao = new ConfeiteiroDAO();
 
 $acao = $_POST['acao'];
 
@@ -40,16 +39,15 @@ switch ($acao) {
         break;
 
     case 'alterar':
-        $resultado = $dao->findByPk($_POST['cdConfeiteiro']);
+        $resultado = $bo->findByPk($_POST['cdConfeiteiro']);
         $bean = $bo->populaBean($resultado[0]);
         var_dump($bean);
         break;
-    
-        
+            
     //Case para carregar os dados no formulário para fazer alteração.
     case 'alterarDados':
-        $usuario = $dao->findByPk($_POST['cdConfeiteiro']);
+        $usuario = $bo->findByPk($_POST['cdConfeiteiro']);
         $bean = $bo->populaBean($usuario[0]);
-        include_once'../../view/usuario/alterar.php';
+        include_once'../../view/confeiteiro/confeiteiro.php';
         break;
 }
