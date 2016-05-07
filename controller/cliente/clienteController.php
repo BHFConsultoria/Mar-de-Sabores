@@ -28,6 +28,11 @@ switch ($acao) {
         $bean = $bo->populaBean($dados);
         $bo->cadastrarCliente($bean);
         echo "Entrou";
-      break;
+    break;
+  
+    case 'desativar':
+        $bean = $bo->populaBean($dados);
+        $bo->desativarCliente($bean);
+    break;
 }
 

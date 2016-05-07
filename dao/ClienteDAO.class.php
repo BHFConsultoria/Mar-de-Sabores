@@ -7,11 +7,21 @@ class ClienteDAO {
         $this->con = new Conexao();
     }
 
-    function deletarCliente($cdCliente){
+    function desativarCliente($bean){
         try {
-                    
-        } catch (Exception $ex) {
+            $query = "UPDATE SET nm_situacao WHERE cd_cliente = ?";
+            $pdo = $this->con->getConexao()->prepare($query);
             
+            $pdo->bindValue(1, $bean->getCdCliente());
+            
+            $pdo->Execute();
+            
+            if($pdo->rowCount()){
+                return "Cliente Alterado";
+            }
+            
+        } catch (Exception $ex) {
+            echo $ex->getCode(),$ex->getFile(),$ex->getLine(),$ex->getMessage();
         }
     }
     
@@ -45,8 +55,8 @@ VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,? )";
          if($pdo->rowCount()){
              return "Cliente Cadastrado";
          }
-        } catch (Exception $e) {
-            echo $e->getCode(),$e->getMessage(),$e->getFile(),$e->getLine();
+        } catch (Exception $ex) {
+            echo $ex->getCode(),$ex->getMessage(),$ex->getFile(),$ex->getLine();
         }  
     }
 }

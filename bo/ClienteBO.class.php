@@ -13,12 +13,18 @@ class ClienteBO {
         
         return $this->dao->cadastrarCliente($bean);
     }
+    
+    function  desativarCliente($bean){
+        
+        return $this->dao->desativarCliente($bean);
+    }
 
-  /** Função para popular os atributos, retornando um objetos com os dados
+    /** Função para popular os atributos, retornando um objetos com os dados
       tratados pelos metodos setters */
   function  populaBean($dados){
       $bean = new ClienteBean();
       
+      $bean->setCdCliente($dados['cdCliente']);
       $bean->setNmCliente($dados['nmCliente']);
       $bean->setNmEmail($dados['nmEmail']);
       $bean->setDsSenha($dados['dsSenha']);

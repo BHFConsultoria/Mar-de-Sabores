@@ -1,7 +1,9 @@
 <?php
 
 class ClienteBean {
-   private $nmCliente;
+    
+    private $cdCliente;
+    private $nmCliente;
     private $nmEmail;
     private $dsSenha;
     private $cdCpf;
@@ -16,11 +18,16 @@ class ClienteBean {
     private $sgSexo;
     private $cdCelular; 
 
+    
+    function getCdCliente() {
+        return $this->cdCliente;
+    }
+
     function getNmCliente() {
         return $this->nmCliente;
     }
-
-    function getNmEmail() {
+    
+        function getNmEmail() {
         return $this->nmEmail;
     }
 
@@ -71,7 +78,11 @@ class ClienteBean {
     function getCdCelular() {
         return $this->cdCelular;
     }
-
+  
+    function setCdCliente($cdCliente) {
+        $this->cdCliente = $cdCliente;
+    }
+    
     function setNmCliente($nmCliente) {
         $this->nmCliente = $nmCliente;
     }
