@@ -24,21 +24,25 @@ class ClienteBO {
   function  populaBean($dados){
       $bean = new ClienteBean();
       
-      $bean->setCdCliente($dados['cdCliente']);
-      $bean->setNmCliente($dados['nmCliente']);
-      $bean->setNmEmail($dados['nmEmail']);
-      $bean->setDsSenha($dados['dsSenha']);
-      $bean->setCdCpf($dados['cdCpf']);
-      $bean->setDtNascimento($dados['dtNascimento']);
-      $bean->setCdTelefone($dados['cdTelefone']);
-      $bean->setNmLogradouro($dados['nmLogradouro']);
-      $bean->setNmComplemento($dados['nmComplemento']);
-      $bean->setNmCidade($dados['nmCidade']);
-      $bean->setNmBairro($dados['nmBairro']);
-      $bean->setCdCep($dados['cdCep']);
-      $bean->setSgUf($dados['sgUf']);
-      $bean->setSgSexo($dados['sgSexo']);
-      $bean->setCdCelular($dados['cdCelular']);
+      if($dados['cd_cliente'] != ""){
+          $bean->setCdCliente($dados['cd_cliente']);
+      }
+            
+      $bean->setNmCliente($dados['nm_cliente']);
+      $bean->setNmEmail($dados['nm_email']);
+      $bean->setDsSenha($dados['ds_senha']);
+      $bean->setCdCpf($dados['cd_cpf']);
+      $bean->setDtNascimento($dados['dt_nascimento']);
+      $bean->setCdTelefone($dados['cd_telefone']);
+      $bean->setNmLogradouro($dados['nm_logradouro']);
+      $bean->setNmComplemento($dados['nm_complemento']);
+      $bean->setNmCidade($dados['nm_cidade']);
+      $bean->setNmBairro($dados['nm_bairro']);
+      $bean->setCdCep($dados['cd_cep']);
+      $bean->setSgUf($dados['sg_uf']);
+      $bean->setSgSexo($dados['sg_sexo']);
+      $bean->setCdCelular($dados['cd_celular']);
+      $bean->setSituacao($dados['nm_situacao']);
       
       return $bean;
       

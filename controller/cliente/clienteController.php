@@ -4,20 +4,22 @@ require_once '../../config.inc.php';
 $bo = new ClienteBO();
 
 $dados=[
-'nmCliente' => $_POST['nmCliente'],
-'nmEmail' => $_POST['nmEmail'],
-'dsSenha' => $_POST['dsSenha'],
-'cdCpf' => $_POST['cdCpf'],
-'dtNascimento' => $_POST['dtNascimento'],
-'cdTelefone' => $_POST['cdTelefone'],
-'nmLogradouro' => $_POST['nmLogradouro'],
-'nmComplemento' => $_POST['nmComplemento'],
-'nmCidade' => $_POST['nmCidade'],
-'nmBairro' => $_POST['nmBairro'],
-'cdCep' => $_POST['cdCep'],
-'sgUf' => $_POST['sgUf'],
-'sgSexo' => $_POST['sgSexo'],
-'cdCelular' => $_POST['cdCelular']
+'cd_cliente' => '', 
+'nm_cliente' => $_POST['nmCliente'],
+'nm_email' => $_POST['nmEmail'],
+'ds_senha' => $_POST['dsSenha'],
+'cd_cpf' => $_POST['cdCpf'],
+'dt_nascimento' => $_POST['dtNascimento'],
+'cd_telefone' => $_POST['cdTelefone'],
+'nm_logradouro' => $_POST['nmLogradouro'],
+'nm_complemento' => $_POST['nmComplemento'],
+'nm_cidade' => $_POST['nmCidade'],
+'nm_bairro' => $_POST['nmBairro'],
+'cd_cep' => $_POST['cdCep'],
+'sg_uf' => $_POST['sgUf'],
+'sg_sexo' => $_POST['sgSexo'],
+'cd_celular' => $_POST['cdCelular'],
+'nm_situacao' => 'A'
 ];
 $acao = $_POST['btnCadastrar'];
     

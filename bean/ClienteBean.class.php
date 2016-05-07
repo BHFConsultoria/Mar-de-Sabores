@@ -17,7 +17,7 @@ class ClienteBean {
     private $sgUf;
     private $sgSexo;
     private $cdCelular; 
-
+    private $situacao;
     
     function getCdCliente() {
         return $this->cdCliente;
@@ -26,8 +26,8 @@ class ClienteBean {
     function getNmCliente() {
         return $this->nmCliente;
     }
-    
-        function getNmEmail() {
+
+    function getNmEmail() {
         return $this->nmEmail;
     }
 
@@ -50,7 +50,7 @@ class ClienteBean {
     function getNmLogradouro() {
         return $this->nmLogradouro;
     }
-    
+
     function getNmComplemento() {
         return $this->nmComplemento;
     }
@@ -78,11 +78,15 @@ class ClienteBean {
     function getCdCelular() {
         return $this->cdCelular;
     }
-  
+
+    function getSituacao() {
+        return $this->situacao;
+    }
+
     function setCdCliente($cdCliente) {
         $this->cdCliente = $cdCliente;
     }
-    
+
     function setNmCliente($nmCliente) {
         $this->nmCliente = $nmCliente;
     }
@@ -110,7 +114,7 @@ class ClienteBean {
     function setNmLogradouro($nmLogradouro) {
         $this->nmLogradouro = $nmLogradouro;
     }
-    
+
     function setNmComplemento($nmComplemento) {
         $this->nmComplemento = $nmComplemento;
     }
@@ -138,6 +142,11 @@ class ClienteBean {
     function setCdCelular($cdCelular) {
         $this->cdCelular = $cdCelular;
     }
+
+    function setSituacao($situacao) {
+        $this->situacao = $situacao;
+    }
+
 
 
     
