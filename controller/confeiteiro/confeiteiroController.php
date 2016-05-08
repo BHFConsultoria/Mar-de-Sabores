@@ -6,8 +6,9 @@ $bo = new ConfeiteiroBO();
 
 $acao = $_POST['acao'];
 
-if ($acao == 'cadastrar') {
+if ($acao == 'cadastrar' || $acao == 'alterar') {
     $dados = [
+        
         'cd_confeiteiro' => '',
         'nm_confeiteiro' => $_POST['nmConfeiteiro'],
         'nm_email' => $_POST['nmEmail'],
@@ -35,19 +36,30 @@ switch ($acao) {
 
     case 'cadastrar':
         $bean = $bo->populaBean($dados);
-        $bo->cadastrarConfeiteiro($bean);
+        $resultado = $bo->cadastrarConfeiteiro($bean);
+        echo $resultado;
         break;
 
     case 'alterar':
-        $resultado = $bo->findByPk($_POST['cdConfeiteiro']);
-        $bean = $bo->populaBean($resultado[0]);
-        var_dump($bean);
+        $dados['cd_confeiteiro'] = $_POST['cdConfeiteiro'];
+        $bean = $bo->populaBean($dados);
+        $dao = new ConfeiteiroDAO();
+        
+        $test = $dao->alterarConfeiteiro($bean);
+        
+        echo $test;
         break;
             
     //Case para carregar os dados no formulário para fazer alteração.
-    case 'alterarDados':
+    case 'alteraDados':
         $usuario = $bo->findByPk($_POST['cdConfeiteiro']);
         $bean = $bo->populaBean($usuario[0]);
         include_once'../../view/confeiteiro/confeiteiro.php';
+        break;
+    
+    case 'desativar':
+        $dao = new ConfeiteiroDAO();
+        $resultado = $bo->desativarConfeiteiro($_POST['cdConfeiteiro']);
+        echo $resultado;
         break;
 }
