@@ -44,6 +44,7 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                         Nome:<input type="text" name="nmConfeiteiro" value="" />
                     </td>
                 </tr>
+                <tr><td>Email:<input type="text" name="nmEmail" /></td></tr>
                 <tr><td>Senha:<input type="text" name="dsSenha" /></td></tr>
                 <tr><td>Email:<input type="text" name="nmEmail" /></td></tr>
                 <tr><td>Razão Social:<input type="text" name="nmRazaoSocial" /></td></tr>

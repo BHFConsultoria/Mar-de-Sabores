@@ -1,0 +1,75 @@
+<?php
+
+class ProdutoDAO extends AbstractDAO {
+
+    private $con;
+
+    function __construct() {
+        $this->con = new Conexao();
+    }
+
+    function deletarProduto($bean) {
+        try {
+            $query="DELETE FROM produto WHERE cd_produto = ?";
+            $pdo = $this->con->getConexao()->prepare($query);
+            $pdo->bindValue(1, $bean->getCdProduto());
+            $pdo->execute();
+            if ($pdo->rowCount()) {
+                return "Produto Deletada";
+            }
+        } catch (Exception $ex) {
+            echo $ex->getCode(), $ex->getFile(), $ex->getLine(), $ex->getMessage();
+        }
+    }
+
+    function desativarProduto($bean) {
+        try {
+            $query = "UPDATE produto SET nm_situacao = 'D' WHERE cd_produto = ?";
+            $pdo = $this->con->getConexao()->prepare($query);
+            $pdo->bindValue(1, $bean->getCdProduto());
+            $pdo->execute();
+            if ($pdo->rowCount()) {
+                return "Produto Desativado";
+            }
+        } catch (Exception $ex) {
+            echo $ex->getCode(), $ex->getFile(), $ex->getLine(), $ex->getMessage();
+        }
+    }
+
+    function cadastrarProduto($bean) {
+        try {
+            $query = "INSERT INTO produto (CONFEITEIRO_cd_confeiteiro,nm_produto,vl_produto,ds_produto,nm_tipo_produto,nm_situacao,nm_categoria)values(?,?,?,?,?,?,?)";
+
+            $pdo = $this->con->getConexao()->prepare($query);
+
+            $pdo->bindValue(1, 1);
+            $pdo->bindValue(2, $bean->getNmProduto());
+            $pdo->bindValue(3, $bean->getVlProduto());
+            $pdo->bindValue(4, $bean->getDsProduto());
+            $pdo->bindValue(5, $bean->getNmTipoProduto());
+            $pdo->bindValue(6, $bean->getNmSituacao());
+            $pdo->bindValue(7, $bean->getNmCategoria());
+
+            $pdo->execute();
+
+            if ($pdo->rowCount()) {
+                return "Produto cadastrado com sucesso";
+            }
+        } catch (Exception $e) {
+            echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
+        }
+    }
+
+    protected function getTabela() {
+        return "produto";
+    }
+
+    protected function getPk() {
+        return "cd_produto";
+    }
+
+    protected function getCon() {
+        return $this->con;
+    }
+
+}
