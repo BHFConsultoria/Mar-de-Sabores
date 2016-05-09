@@ -7,7 +7,7 @@ $dao = new ProdutoDAO();
 
 $acao= $_POST['acao'];
 
-if ($acao == 'cadastrar'){
+if ($acao == 'cadastrar'||$acao == 'alterar'){
     $dados = [
         'cd_produto'=> "",
         'CONFEITEIRO_cd_confeiteiro'=> $cdConfeiteiro = 1,
@@ -23,7 +23,13 @@ switch ($acao){
     
     case 'cadastrar';
         $bean = $bo->populaBean($dados);
-        $bo->cadastrarProduto($bean);
+        $resultado= $bo->cadastrarProduto($bean);
+        break;
+    case 'alterar';
+        $dados['cd_produto']= $_POST['cdProduto'];
+        $bean = $bo->populaBean($dados);
+        $resultado = $bo->alterarProduto($bean);
+        echo $resultado;
         break;
     case 'alterarDados';
         $produto = $dao->findByPk($_POST['cdProduto']);

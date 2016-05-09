@@ -15,6 +15,9 @@ class ProdutoBO extends AbstractBO{
   function deletarProduto($bean){
       return $this->dao->deletarProduto($bean);
   }
+  function alterarProduto($bean){
+      return $this->dao->alterarProduto($bean);
+  }
           function populaBean($dados){
       $bean = new ProdutoBean();
       if($dados['cd_produto'] != ""){

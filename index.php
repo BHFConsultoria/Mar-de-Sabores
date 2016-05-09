@@ -29,6 +29,7 @@
                 </tr><td><a href="view/confeiteiro/confeiteiro.php">Cadastro Confeiteiro</a></td>               
                 <td><a href="view/confeiteiro/listaConfeiteiro.php">Listar Confeiteiros</a></td>
                 <td><a href="view/produto/listaProduto.php">Listar Produtos</a></td>
+                <td><a href="view/produto/produtoView.php">Cadastrar Produtos</a></td>
             </tr>
         </table>
     </body>
