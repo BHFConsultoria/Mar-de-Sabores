@@ -6,6 +6,7 @@
         <title></title>    
         <script src="view/js/jquery-2.2.2.js" type='text/javascript'></script>
         <script src="view/js/funcoes.js" type='text/javascript'></script>
+        <script src="view/js/index.js" type='text/javascript'></script>
         <link rel="stylesheet" href="view/bootstrap/css/bootstrap.css">
     </head>
     <body>
@@ -21,7 +22,7 @@
                             <option value="confeiteiro">Confeiteiro</option>
                         </select>
                     </td>
-                    <td class="col-md-6"><input type="submit" name="enviar" id="enviar"></td>
+                    <td class="col-md-6"><input type="submit" name="enviar" id="enviar" onclick="return verificaCampos()"></td>
                 </tr>
             </form>
             
