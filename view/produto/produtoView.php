@@ -18,13 +18,13 @@ and open the template in the editor.
                 <tr><td>Nome do Produto:<input type="text" name="nmProduto"/></td></tr>
                 <tr><td>Preço:<input type="text" name="vlProduto"/></td></tr>
                 <tr><td>
-                        Categoria do produto:<select name="categoria">
+                        Categoria do produto:<select name="nmCategoria">
                     <option value ="Selecione...">Selecione...</option>
                     <option value ="salgado">Salgado</option>
                     <option value ="doce">Doce</option>
                         </select>
                 </td></tr>
-                <tr><td>Tipo do Produto:<input type="" name=""/></td></tr>
+                <tr><td>Tipo do Produto:<input type="" name="nmTipoProduto"/></td></tr>
                 <tr><td>Descrição do Produto:<textarea name="dsProduto" rows="10" cols="50"></textarea></td></tr>              
                 <tr><td>Imagem:<input type="file" name="imProduto"/></td></tr>
                 <tr><td><input type="submit" name="acao" value="cadastrar"/></td></tr>

@@ -18,6 +18,7 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                         Nome:<input type="text" name="nmConfeiteiro" value="" />
                     </td>
                 </tr>
+                <tr><td>Email:<input type="text" name="nmEmail" /></td></tr>
                 <tr><td>Senha:<input type="text" name="dsSenha" /></td></tr>
                 <tr><td>Razão Social:<input type="text" name="nmRazaoSocial" /></td></tr>
                 <tr><td>Nome Fantasia:<input type="text" name="nmFantasia" /></td></tr>
@@ -34,10 +35,10 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                 </tr><td>CEP:<input type="text" name="cdCep" /></td><tr>
                 </tr><td>UF:<input type="text" name="sgUf" /></td></tr>
                 <tr><td>Sexo:<input type="text" name="sgSexo" /></td></tr>
-                <tr><td><input type="submit" name="acao" value="alterar" /></td></tr>
+                <tr><td><input type="submit" name="acao" value="cadastrar" /></td></tr>
                 
-                <?php if ($acao == 'alterarDados'){ ?>
-                <tr><td>
+                <?php //if ($acao == 'alterarDados'){ ?>
+                <!--<tr><td>
                         <input type="hidden" name="cdConfeiteiro" id="cdConfeiteiro" value="">
                         Nome:<input type="text" name="nmConfeiteiro" value="" />
                     </td>
@@ -59,7 +60,7 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                 <tr><td>UF:<input type="text" name="sgUf" value="<?=$bean->get?>"/></td></tr>
                 <tr><td>Sexo:<input type="text" name="sgSexo" value="<?=$bean->get?>"/></td></tr>
                 <tr><td><input type="submit" name="acao" value="alterar" /></td></tr>
-                <?php } ?>
+                <?php //} ?>-->
                 
             </table>            
         </form>

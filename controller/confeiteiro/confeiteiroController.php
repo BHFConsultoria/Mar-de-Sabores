@@ -37,6 +37,7 @@ switch ($acao) {
     case 'cadastrar':
         $bean = $bo->populaBean($dados);
         $bo->cadastrarConfeiteiro($bean);
+        echo 'ENTROUUUUUUU';
         break;
 
     case 'alterar':
