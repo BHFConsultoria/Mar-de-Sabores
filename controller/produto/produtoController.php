@@ -28,7 +28,7 @@ switch ($acao){
     case 'alterarDados';
         $produto = $dao->findByPk($_POST['cdProduto']);
         $bean= $bo->populaBean($produto[0]);
-        include_once '../..view/produto/alterar.php';
+        include_once '../../view/produto/produtoView.php';
         break;
     case 'desativar';
         $produto = $dao->findByPk($_POST['cdProduto']);
