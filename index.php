@@ -26,7 +26,7 @@
             </form>
             
             <tr>
-                <td><a href="view/confeiteiro/confeiteiro.php">cadastro</a></td>
+                </tr><td><a href="view/confeiteiro/confeiteiro.php">Cadastro Confeiteiro</a></td>               
                 <td><a href="view/confeiteiro/listaConfeiteiro.php">Listar Confeiteiros</a></td>
                 <td><a href="view/produto/listaProduto.php">Listar Produtos</a></td>
             </tr>

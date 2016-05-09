@@ -5,9 +5,9 @@ abstract class AbstractDAO {
     abstract protected function getTabela();
 
     abstract protected function getPk();
-
+    
     abstract protected function getCon();
-
+    
     public function findByPk($pk) {
 
         $query = "SELECT * FROM {$this->getTabela()} WHERE {$this->getPk()} = ?";
