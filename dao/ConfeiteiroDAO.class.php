@@ -50,9 +50,8 @@ class ConfeiteiroDAO extends AbstractDAO {
     
     public function alterarConfeiteiro($bean){
         try{
-            var_dump($bean);
-            $query = "UPDATE confeiteiro SET nm_confeiteiro = ?, nm_email = ?,"
-                    . "ds_senha = ?, nm_razao_social = ?, nm_fantasia = ?,"
+            $query = "UPDATE confeiteiro SET nm_confeiteiro = ?, nm_email = ?"
+                    . ",ds_senha = ?, nm_razao_social = ?, nm_fantasia = ?,"
                     . "cd_cpf = ?, cd_cnpj = ?, cd_inscricao_estadual = ?,"
                     . "dt_nascimento = ?, cd_telefone = ?, cd_celular = ?,"
                     . "nm_logradouro = ?, nm_complemento = ?, nm_cidade = ?,"
@@ -83,9 +82,9 @@ class ConfeiteiroDAO extends AbstractDAO {
             
             $pdo->execute();
             
-           // return "Dados alterados com sucesso";
+           return "Dados alterados com sucesso";
             
-        } catch (Exception $ex) {
+        } catch (Exception $e) {
             echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
         }
     }

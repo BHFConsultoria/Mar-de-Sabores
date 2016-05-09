@@ -43,15 +43,12 @@ switch ($acao) {
     case 'alterar':
         $dados['cd_confeiteiro'] = $_POST['cdConfeiteiro'];
         $bean = $bo->populaBean($dados);
-        $dao = new ConfeiteiroDAO();
-        
-        $test = $dao->alterarConfeiteiro($bean);
-        
-        echo $test;
+        $resultado = $bo->alterarConfeiteiro($bean);
+        echo $resultado;
         break;
             
     //Case para carregar os dados no formulário para fazer alteração.
-    case 'alteraDados':
+    case 'alterarDados':
         $usuario = $bo->findByPk($_POST['cdConfeiteiro']);
         $bean = $bo->populaBean($usuario[0]);
         include_once'../../view/confeiteiro/confeiteiro.php';
