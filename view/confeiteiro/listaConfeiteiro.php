@@ -16,7 +16,7 @@ include_once '../../controller/confeiteiro/confeiteiro.php';
             <td>Senha</td>
         </tr>
         <?php foreach($usuarios as $usuario){ ?>
-        <tr>
+        <tr><?php if($usuario['nm_situacao']!='D'){ ?>
             <td><?=$usuario['cd_confeiteiro']?></td>
             <td><?=$usuario['nm_confeiteiro']?></td>
             <td><?=$usuario['nm_email']?></td>
@@ -30,12 +30,12 @@ include_once '../../controller/confeiteiro/confeiteiro.php';
             </td>
             <td>
             <form action="../../controller/confeiteiro/confeiteiroController.php" method ="POST">
-                <input type="hidden" name="acao" value="deletar"/>
+                <input type="hidden" name="acao" value="desativar"/>
                 <input type="hidden" name="cdConfeiteiro" value="<?=$usuario['cd_confeiteiro']?>"/>
-                <button class="btn btn-danger">Remover</button>
+                <button class="btn btn-danger">Desativar</button>
             </form>
             </td>
-        </tr>
+        </tr><?php } ?>
         <?php } ?>
     </table>
 </html>
