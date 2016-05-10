@@ -50,6 +50,7 @@ switch ($acao) {
     case 'alterarDados':
         $usuario = $dao->findByPk($_POST['cdConfeiteiro']);
         $bean = $bo->populaBean($usuario[0]);
+        //não é confeiteiro em baixo?
         include_once'../../view/usuario/alterar.php';
         break;
 }

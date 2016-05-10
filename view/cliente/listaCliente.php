@@ -14,6 +14,7 @@ include_once '../../controller/cliente/cliente.php';
             <td>Nome</td>
             <td>Email</td>
             <td>Senha</td>
+            <td>Situação</td>
         </tr>
         <?php foreach($usuarios as $usuario){ ?>
         <tr>
@@ -21,6 +22,7 @@ include_once '../../controller/cliente/cliente.php';
             <td><?=$usuario['nm_cliente']?></td>
             <td><?=$usuario['nm_email']?></td>
             <td><?=$usuario['ds_senha']?></td>
+            <td><?=$usuario['nm_situacao']?></td>
             <td>
                 <form action="../../controller/cliente/clienteController.php" method ="POST">
                 <input type="hidden" name="acao" value="alterarDados"/>
@@ -30,9 +32,9 @@ include_once '../../controller/cliente/cliente.php';
             </td>
             <td>
                 <form action="../../controller/cliente/clienteController.php" method ="POST">
-                <input type="hidden" name="acao" value="deletar"/>
+                <input type="hidden" name="acao" value="desativar"/>
                 <input type="hidden" name="cdCliente" value="<?=$usuario['cd_cliente']?>"/>
-                <button class="btn btn-danger">Remover</button>
+                <button class="btn btn-danger">Desativar</button>
             </form>
             </td>
         </tr>

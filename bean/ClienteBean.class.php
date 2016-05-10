@@ -17,8 +17,9 @@ class ClienteBean {
     private $sgUf;
     private $sgSexo;
     private $cdCelular; 
-    private $situacao;
+    private $nmSituacao;
     
+   
     function getCdCliente() {
         return $this->cdCliente;
     }
@@ -79,8 +80,8 @@ class ClienteBean {
         return $this->cdCelular;
     }
 
-    function getSituacao() {
-        return $this->situacao;
+    function getNmSituacao() {
+        return $this->nmSituacao;
     }
 
     function setCdCliente($cdCliente) {
@@ -143,12 +144,8 @@ class ClienteBean {
         $this->cdCelular = $cdCelular;
     }
 
-    function setSituacao($situacao) {
-        $this->situacao = $situacao;
+    function setNmSituacao($nmSituacao) {
+        $this->nmSituacao = $nmSituacao;
     }
 
-
-
-    
-    
 }

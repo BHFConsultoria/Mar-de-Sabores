@@ -18,6 +18,11 @@ class ClienteBO extends AbstractBO {
         
         return $this->dao->desativarCliente($bean);
     }
+    
+    function alterarCliente($bean){
+        
+        return $this->dao->alterarCliente($bean);
+    }
 
     /** Função para popular os atributos, retornando um objetos com os dados
       tratados pelos metodos setters */
@@ -42,7 +47,7 @@ class ClienteBO extends AbstractBO {
       $bean->setSgUf($dados['sg_uf']);
       $bean->setSgSexo($dados['sg_sexo']);
       $bean->setCdCelular($dados['cd_celular']);
-      $bean->setSituacao($dados['nm_situacao']);
+      $bean->setNmSituacao($dados['nm_situacao']);
       
       return $bean;
       

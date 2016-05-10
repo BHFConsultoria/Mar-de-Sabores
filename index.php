@@ -26,8 +26,10 @@
             </form>
             
             <tr>
-                <td><a href="view/confeiteiro/confeiteiro.php">cadastro</a></td>
+                <td><a href="view/confeiteiro/confeiteiro.php">Cadastro Confeiteiro</a></td>
+                <td><a href="view/cliente/cliente.php">Cadastro Cliente</a></td>
                 <td><a href="view/confeiteiro/listaConfeiteiro.php">Listar Confeiteiros</a></td>
+                <td><a href="view/cliente/listaUsuario.php">Listar Cliente</a></td>
             </tr>
         </table>
     </body>
