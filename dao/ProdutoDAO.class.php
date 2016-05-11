@@ -35,11 +35,31 @@ class ProdutoDAO extends AbstractDAO {
             echo $ex->getCode(), $ex->getFile(), $ex->getLine(), $ex->getMessage();
         }
     }
+    function alterarProduto($bean){
+        try{
+            $query ="UPDATE produto SET CONFEITEIRO_cd_confeiteiro =1"
+                    . ",nm_produto=? ,vl_produto= ? ,ds_produto=? ,"
+                    . "nm_tipo_produto=?,nm_situacao=?, nm_categoria= ? "
+                    . "where cd_produto = ?";
+            
+            $pdo = $this->con->getConexao()->prepare($query);
+            $pdo->bindValue(1, $bean->getNmProduto());
+            $pdo->bindValue(2, $bean->getVlProduto());
+            $pdo->bindValue(3, $bean->getDsProduto());
+            $pdo->bindValue(4, $bean->getNmTipoProduto());
+            $pdo->bindValue(5, $bean->getNmSituacao());
+            $pdo->bindValue(6, $bean->getNmCategoria());
+            $pdo->bindValue(7, $bean->getCdProduto());
+            $pdo->execute();
+            return "Produtos Alterados com sucesso";
+        } catch (Exception $ex) {
+            echo $ex->getCode(),$ex->getMessage(),$ex->getFile(),$ex->getLine();
+        }
+    }
 
     function cadastrarProduto($bean) {
         try {
             $query = "INSERT INTO produto (CONFEITEIRO_cd_confeiteiro,nm_produto,vl_produto,ds_produto,nm_tipo_produto,nm_situacao,nm_categoria)values(?,?,?,?,?,?,?)";
-
             $pdo = $this->con->getConexao()->prepare($query);
 
             $pdo->bindValue(1, 1);
