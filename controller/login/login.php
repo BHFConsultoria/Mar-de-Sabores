@@ -2,9 +2,9 @@
 
 require_once '../../config.inc.php';
 
-$nmEmail = $_GET['nmEmail'];
-$dsSenha = $_GET['dsSenha'];
-$tpUsuario = $_GET['tpUsuario'];
+$nmEmail = $_POST['nmEmail'];
+$dsSenha = $_POST['dsSenha'];
+$tpUsuario = $_POST['tpUsuario'];
 
 $loginBO = new LoginBO();
 

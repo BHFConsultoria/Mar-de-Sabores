@@ -2,6 +2,8 @@
 
 require_once '../../config.inc.php';
 
+session_start();
+
 $bo = new ConfeiteiroBO();
 
 $acao = $_POST['acao'];
@@ -49,9 +51,10 @@ switch ($acao) {
             
     //Case para carregar os dados no formulário para fazer alteração.
     case 'alterarDados':
-        $usuario = $bo->findByPk($_POST['cdConfeiteiro']);
-        $bean = $bo->populaBean($usuario[0]);
-        include_once'../../view/confeiteiro/confeiteiro.php';
+        $confeiteiro = $bo->findByPk($_POST['cdConfeiteiro']);
+        $_SESSION['acao'] = $acao;
+        var_dump($_SESSION['acao']);
+        header('Location: ../../view/confeiteiro/confeiteiro.php');
         break;
     
     case 'desativar':
