@@ -22,7 +22,7 @@ class LoginDAO {
             
             return $resultado;
         } catch (Exception $e) {
-            
+            echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
         }
     }
 
