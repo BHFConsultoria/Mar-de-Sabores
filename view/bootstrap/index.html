@@ -10,15 +10,15 @@
         <title>Mar de Sabores - O Portal dos Confeiteiros</title>
 
         <!-- CSS -->
-        <link href="view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="view/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="view/bootstrap/css/nivo-lightbox.css" rel="stylesheet" />
-        <link href="view/bootstrap/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-        <link href="view/bootstrap/css/owl.carousel.css" rel="stylesheet" media="screen" />
-        <link href="view/bootstrap/css/owl.theme.css" rel="stylesheet" media="screen" />	
-        <link href="view/bootstrap/css/animate.css" rel="stylesheet" />
-        <link href="view/bootstrap/css/style.css" rel="stylesheet">
-        <link href="view/bootstrap/color/default.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/nivo-lightbox.css" rel="stylesheet" />
+        <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+        <link href="css/owl.carousel.css" rel="stylesheet" media="screen" />
+        <link href="css/owl.theme.css" rel="stylesheet" media="screen" />	
+        <link href="css/animate.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet">
+        <link href="color/default.css" rel="stylesheet">
 
     </head>
 
@@ -26,17 +26,13 @@
 
         <!-- Section: intro -->
         <section id="intro" class="intro">
-            <form id="contact-form-login" action="controller/login/login.php" method="POST">
-                <input class="form-control-login" name="nmEmail" id="nmEmail" type="text" placeholder="Usuario" />
-                <input class="form-control-login" name="dsSenha" id="dsSenha" type="password" placeholder="Senha" />
-                <select id="tpUsuario" name="tpUsuario">
-                    <option value="cliente">Cliente</option>
-                    <option value="confeiteiro">Confeiteiro</option>
-                    <select/>
-                    <button type="submit">Acessar</button>
+            <form id="contact-form-login">
+                <input class="form-control-login" type="text" placeholder="Usuario" />
+                <input class="form-control-login " type="password" placeholder="Senha" />
+                <button type="submit">Acessar</button>
             </form>
             <div class="slogan">
-                <a href="index.html"><img src="view/bootstrap/img/logo.png" alt="" /></a>
+                <a href="index.html"><img src="img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
                 <div class="form-group">
                     <input type="text" class="" id="email" placeholder="Digite aqui sua cidade" required="required"/>
@@ -65,10 +61,10 @@
                     <div class="col-sm-12 col-md-12 col-lg-12" >
                         <div class="wow bounceInUp" data-wow-delay="0.4s">
                             <div id="owl-works" class="owl-carousel">
-                                <div class="item"><a href="view/bootstrap/img/gallery/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="view/bootstrap/img/gallery/1.jpg" class="img-responsive" alt="img"></a></div>
-                                <div class="item"><a href="view/bootstrap/img/gallery/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="view/bootstrap/img/gallery/2.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="view/bootstrap/img/gallery/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="view/bootstrap/img/gallery/3.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="view/bootstrap/img/gallery/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="view/bootstrap/img/gallery/4.jpg" class="img-responsive " alt="img"></a></div>
+                                <div class="item"><a href="img/gallery/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/1.jpg" class="img-responsive" alt="img"></a></div>
+                                <div class="item"><a href="img/gallery/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/2.jpg" class="img-responsive " alt="img"></a></div>
+                                <div class="item"><a href="img/gallery/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/3.jpg" class="img-responsive " alt="img"></a></div>
+                                <div class="item"><a href="img/gallery/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/4.jpg" class="img-responsive " alt="img"></a></div>
 
                             </div>
                         </div>
@@ -86,7 +82,7 @@
                     <div class="col-xs-6 col-sm-3 col-md-3">
                         <div class="align-center txt-shadow">
                             <div class="icon">
-                                <img src="view/bootstrap/img/local.png">
+                                <img src="img/local.png">
                             </div>
                             <span class="color-white">Selecione sua <br><b>Cidade</b></span>
 
@@ -95,7 +91,7 @@
                     <div class="col-xs-6 col-sm-3 col-md-3">
                         <div class="align-center txt-shadow">
                             <div class="icon">
-                                <img src="view/bootstrap/img/conf.png">
+                                <img src="img/conf.png">
                             </div>
                             <span class="color-white">Escolha seu <br><b>Confeiteiro</b></span>
                         </div>
@@ -103,7 +99,7 @@
                     <div class="col-xs-6 col-sm-3 col-md-3">
                         <div class="align-center txt-shadow">
                             <div class="icon">
-                                <img src="view/bootstrap/img/produto.png">
+                                <img src="img/produto.png">
                             </div>
                             <span class="color-white">Escolha seu <br><b>Produto</b></span>
                         </div>
@@ -111,7 +107,7 @@
                     <div class="col-xs-6 col-sm-3 col-md-3">
                         <div class="align-center txt-shadow">
                             <div class="icon">
-                                <img src="view/bootstrap/img/data.png">
+                                <img src="img/data.png">
                             </div>
                             <span class="color-white">Agende uma data para <br><b>Entrega</b></span>
                         </div>
@@ -142,17 +138,17 @@
         </footer>
 
         <!-- Core JavaScript Files -->
-        <script src="view/bootstrap/js/jquery.min.js"></script>
-        <script src="view/bootstrap/js/bootstrap.min.js"></script>
-        <script src="view/bootstrap/js/jquery.easing.min.js"></script>	
-        <script src="view/bootstrap/js/jquery.sticky.js"></script>
-        <script src="view/bootstrap/js/jquery.scrollTo.js"></script>
-        <script src="view/bootstrap/js/stellar.js"></script>
-        <script src="view/bootstrap/js/wow.min.js"></script>
-        <script src="view/bootstrap/js/owl.carousel.min.js"></script>
-        <script src="view/bootstrap/js/nivo-lightbox.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>	
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.scrollTo.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/nivo-lightbox.min.js"></script>
         <!-- Custom Theme JavaScript -->
-        <script src="view/bootstrap/js/custom.js"></script>
+        <script src="js/custom.js"></script>
 
     </body>
 
