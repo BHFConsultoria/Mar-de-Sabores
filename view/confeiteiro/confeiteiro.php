@@ -59,17 +59,8 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                     </div>
                 </div>
             </div>
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-8 col-md-offset-2">
-                        <div class="form-wrapper marginbot-50">
-                            <form id="contact-form" method="POST" action="../../controller/confeiteiro/confeiteiroController.php">
-                                <div class="row">
-
-                                    <div class="row">
-                                        <div class="col-lg-8 col-md-8">
-                                            <div class="form-group">
+            
+            
                                                 <input type="text" class="form-control" id="nmConfeiteiro" value="<?=$_SESSION['nome']?>"name="nmConfeiteiro" placeholder="Seu nome" title="Aqui é seu nome" required="required"/>
                                             </div>
                                         </div>
