@@ -46,10 +46,11 @@ class LoginBO {
             $_SESSION['sgUf'] = $resultado[0]['sg_uf'];
             $_SESSION['sgSexo'] = $resultado[0]['sg_sexo'];
             
-            /*
-             * Preciso ajustar isso!!!
-             */
-            header('Location: ../../view/confeiteiro/indexConfeiteiro.php');
+            if($tpUsuario == 'confeiteiro'){
+                header("Location: ../../view/confeiteiro/indexConfeiteiro.php"); 
+            }else{
+                header("Location: ../../view/cliente/indexCliente.php");
+            }
         }
     }
 

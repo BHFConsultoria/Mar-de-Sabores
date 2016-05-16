@@ -1,5 +1,8 @@
 <?php
 include_once '../../controller/confeiteiro/confeiteiroController.php';
+if (!isset($_SESSION)){
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,14 +73,15 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                                     <div class="row">
                                         <div class="col-lg-8 col-md-8">
                                             <div class="form-group">
+                                                <input type="hidden" id="cdConfeiteiro" name="cdConfeiteiro" value="<?=$_SESSION['codigo']?>">
                                                 <input type="text" class="form-control" id="nmConfeiteiro" value="<?=$_SESSION['nome']?>"name="nmConfeiteiro" placeholder="Seu nome" title="Aqui é seu nome" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
 
                                             <select class="form-control" id="sgSexo" name="sgSexo">
-                                                <option>Feminino</option>
-                                                <option>Masculino</option>
+                                                <option value="F">Feminino</option>
+                                                <option value="M">Masculino</option>
                                             </select>
 
                                         </div>
@@ -124,16 +128,21 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                                         </div>
                                         <div class="col-lg-8 col-md-8">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmEndereco" name="nmEndereco" value="<?=$_SESSION['nmEndereco']?>" placeholder="Seu Endereço" title="Aqui é seu endereço residêncial" required="required"/>
+                                                <input type="text" class="form-control" id="nmLogradouro" name="nmLogradouro" value="<?=$_SESSION['nmEndereco']?>" placeholder="Seu Endereço" title="Aqui é seu endereço residêncial" required="required"/>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4">
+                                        <div class="col-lg-3 col-md-3">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="nmComplemento" name="nmComplemento" value="<?=$_SESSION['nmComplemento']?>" placeholder="Complemento" title="Ex.: casa 1, apto 101, fundos" required="required"/>
                                             </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="nmBairro" name="nmBairro" value="<?=$_SESSION['nmBairro']?>" placeholder="Bairro" title="Aqui é o seu bairro" required="required"/>
+                                            </div>                 
                                         </div>
 
                                         <div class="col-lg-4 col-md-4">
@@ -141,10 +150,9 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                                                 <input type="text" class="form-control" id="nmCidade" name="nmCidade" value="<?=$_SESSION['nmCidade']?>" placeholder="Cidade" title="Aqui é a sua cidade" required="required"/>
                                             </div>
                                         </div>
-
-                                        <div class="col-lg-4 col-md-4">
+                                        <div class="col-lg-2 col-md-2">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmBairro" name="nmBairro" value="<?=$_SESSION['nmBairro']?>" placeholder="Bairro" title="Aqui é o seu bairro" required="required"/>
+                                                <input type="text" class="form-control" id="sgUf" name="sgUf" value="<?=$_SESSION['sgUf']?>" placeholder="Cidade" title="Aqui é a sua cidade" required="required"/>
                                             </div>
                                         </div>
                                     </div>
@@ -178,7 +186,7 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
                                             </div>
                                         </div>
                                     </div>
-                                    <?php if($_SESSION['acao'] == 'alterarDados'){ ?>
+                                    <?php if($_REQUEST['acao'] == 'alterar'){ ?>
                                     <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="alterar">Alterar</button>
                                     <?php }else{ ?>
                                     <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="cadastrar">Cadastrar</button>

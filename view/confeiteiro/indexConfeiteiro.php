@@ -27,7 +27,18 @@
         <!-- Section: intro -->
         <section id="intro" class="intro-pages">
             <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
-
+            <div class="btn-group ">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="../confeiteiro/confeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
+                    <li><a href="#">Desativar Cadastro</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">SAIR</a></li>
+                </ul>
+            </div>
             <div class="slogan">
                 <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
@@ -58,9 +69,10 @@
 
                                 <div class="collapse navbar-collapse" id="menu">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="../confeiteiro/confeiteiro.php">[Alterar cadastro]</a></li>
-                                        <li><a href="">[Cadastrar produto]</a></li>
-                                        <li><a href="">[Alterar produto]</a></li>                                                                         <li><a href="">[Deletar produto]</a></li>
+                                        <li><a >[Alterar cadastro]</a></li>
+                                        <li><a href="../../controller/confeiteiro/confeiteiroController.php">[Desativar cadastro]</a></li>
+                                        <li><a href="">[Alterar produto]</a></li>                                                                         
+                                        <li><a href="">[Deletar produto]</a></li>
                                     </ul>
                                 </div>
 
@@ -87,17 +99,17 @@
         </footer>
 
         <!-- Core JavaScript Files -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.easing.min.js"></script>	
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/jquery.scrollTo.js"></script>
-        <script src="js/stellar.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/nivo-lightbox.min.js"></script>
+        <script src="../bootstrap/js/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../bootstrap/js/jquery.easing.min.js"></script>	
+        <script src="../bootstrap/js/jquery.sticky.js"></script>
+        <script src="../bootstrap/js/jquery.scrollTo.js"></script>
+        <script src="../bootstrap/js/stellar.js"></script>
+        <script src="../bootstrap/js/wow.min.js"></script>
+        <script src="../bootstrap/js/owl.carousel.min.js"></script>
+        <script src="../bootstrap/js/nivo-lightbox.min.js"></script>
         <!-- Custom Theme JavaScript -->
-        <script src="js/custom.js"></script>
+        <script src="../bootstrap/js/custom.js"></script>
 
     </body>
 
