@@ -57,7 +57,7 @@
                                     <ul class="nav navbar-nav">
                                         <li><a href="../confeiteiro/confeiteiro.php">[Alterar cadastro]</a></li>
                                         <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
-                                        <li><a href="">[Alterar produto]</a></li>                                                                         <li><a href="">[Deletar produto]</a></li>
+                                        <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="">[Deletar produto]</a></li>
                                     </ul>
                                 </div>
 
