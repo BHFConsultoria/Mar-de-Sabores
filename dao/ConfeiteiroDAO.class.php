@@ -40,9 +40,9 @@ class ConfeiteiroDAO extends AbstractDAO {
 
             $pdo->execute();
 
-            if ($pdo->rowCount()) {
-                return "Cadastro realizado com sucesso";
-            }
+//            if ($pdo->rowCount()) {
+//                return "Cadastro realizado com sucesso";
+//            }
         } catch (Exception $e) {
             echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
         }
