@@ -38,23 +38,16 @@ switch ($acao) {
 
     case 'cadastrar':
         $bean = $bo->populaBean($dados);
-        $resultado = $bo->cadastrarConfeiteiro($bean);
-        echo $resultado;
+        $bo->cadastrarConfeiteiro($bean);
+        echo "<script>alert('Cadastro realizado com sucesso!')</script>";
+        echo "<script>window.location.assign('../../index.php')</script>";
         break;
-
     case 'alterar':
         $dados['cd_confeiteiro'] = $_POST['cdConfeiteiro'];
         $bean = $bo->populaBean($dados);
-        $resultado = $bo->alterarConfeiteiro($bean);
-        echo $resultado;
-        break;
-            
-    //Case para carregar os dados no formulário para fazer alteração.
-    case 'alterarDados':
-        $confeiteiro = $bo->findByPk($_POST['cdConfeiteiro']);
-        $_SESSION['acao'] = $acao;
-        var_dump($_SESSION['acao']);
-        header('Location: ../../view/confeiteiro/confeiteiro.php');
+        $bo->alterarConfeiteiro($bean);
+        echo "<script>alert('Dados alterados com sucesso!')</script>";
+        echo "<script>window.location.assign('../../view/confeiteiro/indexConfeiteiro.php')</script>";
         break;
     
     case 'desativar':
