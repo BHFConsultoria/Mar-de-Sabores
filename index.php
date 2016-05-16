@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,8 +33,9 @@
                 <select id="tpUsuario" name="tpUsuario">
                     <option value="cliente">Cliente</option>
                     <option value="confeiteiro">Confeiteiro</option>
-                    <select/>
-                    <button type="submit">Acessar</button>
+                <select/>
+                <button type="submit">Acessar</button>
+                <a href="view/confeiteiro/confeiteiro.php">Cadastra-se (Confeiteiro)</a>
             </form>
             <div class="slogan">
                 <a href="index.html"><img src="view/bootstrap/img/logo.png" alt="" /></a>
@@ -130,8 +132,7 @@
 
         </section>
         <!-- /Section: Newsletter -->
-
-        <footer>
+<footer>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
