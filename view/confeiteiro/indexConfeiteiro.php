@@ -47,9 +47,6 @@
         </section>
         <!-- /Section: intro -->
 
-
-
-
         <!-- Section: Area confeiteiro -->
         <section id="about" class="home-section">
 
@@ -69,10 +66,9 @@
 
                                 <div class="collapse navbar-collapse" id="menu">
                                     <ul class="nav navbar-nav">
-                                        <li><a >[Alterar cadastro]</a></li>
-                                        <li><a href="../../controller/confeiteiro/confeiteiroController.php">[Desativar cadastro]</a></li>
-                                        <li><a href="">[Alterar produto]</a></li>                                                                         
-                                        <li><a href="">[Deletar produto]</a></li>
+                                        <li><a href="../confeiteiro/confeiteiro.php">[Alterar cadastro]</a></li>
+                                        <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
+                                        <li><a href="">[Alterar produto]</a></li>                                                                         <li><a href="">[Deletar produto]</a></li>
                                     </ul>
                                 </div>
 
