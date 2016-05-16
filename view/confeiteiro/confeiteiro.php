@@ -73,7 +73,6 @@ if (!isset($_SESSION)){
                                     <div class="row">
                                         <div class="col-lg-8 col-md-8">
                                             <div class="form-group">
-                                                <input type="hidden" id="cdConfeiteiro" name="cdConfeiteiro" value="<?=$_SESSION['codigo']?>">
                                                 <input type="text" class="form-control" id="nmConfeiteiro" value="<?=$_SESSION['nome']?>"name="nmConfeiteiro" placeholder="Seu nome" title="Aqui é seu nome" required="required"/>
                                             </div>
                                         </div>

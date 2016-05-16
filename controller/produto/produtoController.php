@@ -8,6 +8,7 @@ $dao = new ProdutoDAO();
 $acao= $_POST['acao'];
 
 if ($acao == 'cadastrar'||$acao == 'alterar'){
+    //$vl_produto = str_replace(",",".", vlproduto);
     $dados = [
         'cd_produto'=> "",
         'CONFEITEIRO_cd_confeiteiro'=> $cdConfeiteiro = 1,
@@ -24,6 +25,7 @@ switch ($acao){
     case 'cadastrar';
         $bean = $bo->populaBean($dados);
         $resultado= $bo->cadastrarProduto($bean);
+        header('Location: ../../view/produto/produto.php');
         break;
     case 'alterar';
         $dados['cd_produto']= $_POST['cdProduto'];
