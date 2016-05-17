@@ -30,5 +30,19 @@ abstract class AbstractDAO {
         
         return $dados;
     }
-
+    
+    public function findEmailByEmail($nmEmail){
+        
+        $query = "SELECT nm_email FROM {$this->getTabela()} WHERE nm_email = ?";
+        $pdo = $this->getCon()->getConexao()->prepare($query);
+        
+        $pdo->bindValue(1,"$nmEmail");
+        
+        $pdo->execute();
+        
+        $resultado = $pdo->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $resultado;
+    }
+    
 }

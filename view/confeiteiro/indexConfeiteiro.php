@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+session_start();
+require_once '../../config.inc.php';
+$bo = new LoginBO();
+$bo->logado();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,18 +31,23 @@
 
         <!-- Section: intro -->
         <section id="intro" class="intro-pages">
-            <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
-            <div class="btn-group ">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="../confeiteiro/confeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                    <li><a href="#">Desativar Cadastro</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">SAIR</a></li>
-                </ul>
+            <div id="navigation">
+                <nav class="navbar navbar-custom" role="navigation">
+                    <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="../confeiteiro/formConfeiteiro.php">Alterar Cadastro</a></li>
+                            <li><a href="#">Desativar Cadastro</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
+                        </ul>
+                    </div>         
+
+                </nav>
             </div>
             <div class="slogan">
                 <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
@@ -66,7 +76,7 @@
 
                                 <div class="collapse navbar-collapse" id="menu">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="../confeiteiro/confeiteiro.php">[Alterar cadastro]</a></li>
+                                        <li><a>[Alterar cadastro]</a></li>
                                         <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
                                         <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="">[Deletar produto]</a></li>
                                     </ul>
