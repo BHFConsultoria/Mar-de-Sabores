@@ -22,7 +22,8 @@ class LoginBO {
         $resultado = $this->dao->verificaLogin($bean->getNmEmail(), $bean->getDsSenha(), $tpUsuario);
 
         if (empty($resultado)) {
-            echo "usuário nao encontrado";
+            echo "<script>alert('Usuário ou senha inválido!')</script>";
+            echo "<script>window.location.assign('../../index.php')</script>";
         } else {
             session_start();
 
@@ -54,7 +55,8 @@ class LoginBO {
             }
         }
     }
-
+    
+    /** Função para verificar se o usuário está logado. */
     public function logado() {
 
         session_start();
