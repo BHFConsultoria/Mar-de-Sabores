@@ -33,7 +33,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="../confeiteiro/confeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
+                    <li><a href="../cliente/cliente.php?acao=alterar">Alterar Cadastro</a></li>
                     <li><a href="#">Desativar Cadastro</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">SAIR</a></li>
@@ -47,7 +47,7 @@
         </section>
         <!-- /Section: intro -->
 
-        <!-- Section: Area confeiteiro -->
+        <!-- Section: Area cliente -->
         <section id="about" class="home-section">
 
 
@@ -63,16 +63,6 @@
                                         <i class="fa fa-bars"></i>
                                     </button>
                                 </div>
-
-                                <div class="collapse navbar-collapse" id="menu">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="../confeiteiro/confeiteiro.php">[Alterar cadastro]</a></li>
-                                        <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
-                                        <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="">[Deletar produto]</a></li>
-                                    </ul>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -82,7 +72,7 @@
 
 
         </section>
-        <!-- /Section: Area confeiteiro -->
+        <!-- /Section: Area cliente -->
 
         <footer>
             <div class="container">

@@ -1,6 +1,6 @@
 <?php
-include_once '../../controller/confeiteiro/confeiteiroController.php';
-if (!isset($_SESSION)){
+include_once '../../controller/cliente/clienteController.php';
+if (!isset($_SESSION)) {
     session_start();
 }
 ?>
@@ -31,16 +31,35 @@ if (!isset($_SESSION)){
 
         <!-- Section: intro -->
         <section id="intro" class="intro-pages">
-
-            <div class="slogan">
-                <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
-                <h3>Os melhores bolos e doces na sua casa!</h3>
-            </div>
-            <div class="page-scroll">
-                <a href="#about">
-                    <i class="fa fa-angle-down fa-5x animated"></i>
-                </a>
-            </div>
+            <?php if ($_REQUEST['acao'] == 'alterar') { ?>
+                <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
+                <div class="btn-group ">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="../cliente/cliente.php?acao=alterar">Alterar Cadastro</a></li>
+                        <li><a href="#">Desativar Cadastro</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">SAIR</a></li>
+                    </ul>
+                </div>
+                <div class="slogan">
+                    <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
+                    <h3>Os melhores bolos e doces na sua casa!</h3>
+                </div>
+            <?php } else { ?> 
+                <div class="slogan">
+                    <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
+                    <h3>Os melhores bolos e doces na sua casa!</h3>
+                </div>
+                <div class="page-scroll">
+                    <a href="#about">
+                        <i class="fa fa-angle-down fa-5x animated"></i>
+                    </a>
+                </div>
+            <?php } ?>
         </section>
         <!-- /Section: intro -->
 
@@ -50,13 +69,22 @@ if (!isset($_SESSION)){
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-offset-2">
-
-                            <div class="section-heading">
-                                <div class="wow bounceInDown" data-wow-delay="0.4s">
-                                    <h2>cadastro cliente</h2>
+                            <?php if ($_REQUEST['acao'] == 'alterar') { ?>
+                                <div class="section-heading">
+                                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                                        <h2>alterar cliente</h2>
+                                    </div>
+                                    <p class="wow lightSpeedIn" data-wow-delay="0.3s">Atualize seus dados em nossa rede.</p>
+                                </div> 
+                            <?php } else { ?>
+                                <div class="section-heading">
+                                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                                        <h2>cadastro cliente</h2>
+                                    </div>
+                                    <p class="wow lightSpeedIn" data-wow-delay="0.3s">Em poucos minutos você fazerá parte de nossa rede.</p>
                                 </div>
-                                <p class="wow lightSpeedIn" data-wow-delay="0.3s">Em poucos minutos você fazerá parte de nossa rede.</p>
-                            </div>
+                            <?php } ?>
+
 
                         </div>
                     </div>
@@ -73,7 +101,7 @@ if (!isset($_SESSION)){
                                     <div class="row">
                                         <div class="col-lg-8 col-md-8">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmConfeiteiro" value="<?=$_SESSION['nome']?>"name="nmCliente" placeholder="Seu nome" title="Aqui é seu nome" required="required"/>
+                                                <input type="text" class="form-control" id="nmCliente" value="<?= $_SESSION['nome'] ?>" name="nmCliente" placeholder="Seu nome" title="Aqui é seu nome" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
@@ -89,30 +117,30 @@ if (!isset($_SESSION)){
                                     <div class="row">
                                         <div class="col-lg-8 col-md-8">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" id="nmEmail" name="nmEmail" value="<?=$_SESSION['nmEmail']?>" placeholder="Seu email" title="Aqui é seu email" required="required"/>
+                                                <input type="email" class="form-control" id="nmEmail" name="nmEmail" value="<?= $_SESSION['nmEmail'] ?>" placeholder="Seu email" title="Aqui é seu email" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="dtNascimento" name="dtNascimento" value="<?=$_SESSION['dtNascimento']?>" placeholder="Data de Nascimento" title="Aqui é sua data de nascimento" required="required"/>
+                                                <input type="date" class="form-control" id="dtNascimento" name="dtNascimento" value="<?= $_SESSION['dtNascimento'] ?>" placeholder="Data de Nascimento" title="Aqui é sua data de nascimento" required="required"/>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="cdTelefone" name="cdTelefone" value="<?=$_SESSION['cdTelefone']?>" placeholder="Seu Telefone" title="Aqui é seu telefone residencial" required="required"/>
+                                                <input type="text" class="form-control" id="cdTelefone" name="cdTelefone" value="<?= $_SESSION['cdTelefone'] ?>" placeholder="Seu Telefone" title="Aqui é seu telefone residencial" required="required"/>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="cdCelular" name="cdCelular" value="<?=$_SESSION['cdCelular']?>" placeholder="Seu Celular" title="Aqui é seu celular pessoal" required="required"/>
+                                                <input type="text" class="form-control" id="cdCelular" name="cdCelular" value="<?= $_SESSION['cdCelular'] ?>" placeholder="Seu Celular" title="Aqui é seu celular pessoal" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="cdCpf" name="cdCpf" value="<?=$_SESSION['cdCpf']?>" placeholder="Seu CPF" title="Aqui é seu cpf" required="required"/>
+                                                <input type="text" class="form-control" id="cdCpf" name="cdCpf" value="<?= $_SESSION['cdCpf'] ?>" placeholder="Seu CPF" title="Aqui é seu cpf" required="required"/>
                                             </div>
                                         </div>
 
@@ -122,12 +150,12 @@ if (!isset($_SESSION)){
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="cdCep" name="cdCep" value="<?=$_SESSION['cdCep']?>" placeholder="Seu CEP" title="Aqui é o CEP da sua residência" required="required"/>
+                                                <input type="text" class="form-control" id="cdCep" name="cdCep" value="<?= $_SESSION['cdCep'] ?>" placeholder="Seu CEP" title="Aqui é o CEP da sua residência" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-8 col-md-8">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmLogradouro" name="nmLogradouro" value="<?=$_SESSION['nmEndereco']?>" placeholder="Seu Endereço" title="Aqui é seu endereço residêncial" required="required"/>
+                                                <input type="text" class="form-control" id="nmLogradouro" name="nmLogradouro" value="<?= $_SESSION['nmLogradouro'] ?>" placeholder="Seu Endereço" title="Aqui é seu endereço residêncial" required="required"/>
                                             </div>
                                         </div>
                                     </div>
@@ -135,33 +163,30 @@ if (!isset($_SESSION)){
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmComplemento" name="nmComplemento" value="<?=$_SESSION['nmComplemento']?>" placeholder="Complemento" title="Ex.: casa 1, apto 101, fundos" required="required"/>
+                                                <input type="text" class="form-control" id="nmComplemento" name="nmComplemento" value="<?= $_SESSION['nmComplemento'] ?>" placeholder="Complemento" title="Ex.: casa 1, apto 101, fundos" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-md-3">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmBairro" name="nmBairro" value="<?=$_SESSION['nmBairro']?>" placeholder="Bairro" title="Aqui é o seu bairro" required="required"/>
+                                                <input type="text" class="form-control" id="nmBairro" name="nmBairro" value="<?= $_SESSION['nmBairro'] ?>" placeholder="Bairro" title="Aqui é o seu bairro" required="required"/>
                                             </div>                 
                                         </div>
 
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmCidade" name="nmCidade" value="<?=$_SESSION['nmCidade']?>" placeholder="Cidade" title="Aqui é a sua cidade" required="required"/>
+                                                <input type="text" class="form-control" id="nmCidade" name="nmCidade" value="<?= $_SESSION['nmCidade'] ?>" placeholder="Cidade" title="Aqui é a sua cidade" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-2 col-md-2">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="sgUf" name="sgUf" value="<?=$_SESSION['sgUf']?>" placeholder="Estado" title="Aqui é seu Estado" required="required"/>
+                                                <input type="text" class="form-control" id="sgUf" name="sgUf" value="<?= $_SESSION['sgUf'] ?>" placeholder="Estado" title="Aqui é seu Estado" required="required"/>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="nmRazaoSocial" name="nmRazaoSocial" value="<?=$_SESSION['nmRazaoSocial']?>" placeholder="Razão Social" title="Aqui é seu nome" required="required"/>
                                     </div>
                                     <div class="row" id="senha">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="dsSenha" name="dsSenha" value="" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
+                                                <input type="text" class="form-control" id="dsSenha" name="dsSenha" value="<?= $_SESSION['dsSenha'] ?>" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
@@ -170,10 +195,10 @@ if (!isset($_SESSION)){
                                             </div>
                                         </div>
                                     </div>
-                                    <?php if($_REQUEST['acao'] == 'alterar'){ ?>
-                                    <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="alterar">Alterar</button>
-                                    <?php }else{ ?>
-                                    <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="cadastrar">Cadastrar</button>
+                                    <?php if ($_REQUEST['acao'] == 'alterar') { ?>
+                                        <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="alterar">Alterar</button>
+                                    <?php } else { ?>
+                                        <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="cadastrar">Cadastrar</button>
                                     <?php } ?>
                                 </div>
                             </form>

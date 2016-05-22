@@ -79,7 +79,6 @@ if (!isset($_SESSION)){
                                         <div class="col-lg-4 col-md-4">
 
                                             <select class="form-control" id="sgSexo" name="sgSexo">
-                                                <option value="<?= $_SESSION['sgSexo']?>"><?php echo($_SESSION['sgSexo']=='F') ? 'Feminino' : 'Masculino'; ?></option>
                                                 <option value="F">Feminino</option>
                                                 <option value="M">Masculino</option>
                                             </select>
@@ -128,7 +127,7 @@ if (!isset($_SESSION)){
                                         </div>
                                         <div class="col-lg-8 col-md-8">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nmLogradouro" name="nmLogradouro" value="<?=$_SESSION['nmLogradouro']?>" placeholder="Seu Endereço" title="Aqui é seu endereço residêncial" required="required"/>
+                                                <input type="text" class="form-control" id="nmLogradouro" name="nmLogradouro" value="<?=$_SESSION['nmEndereco']?>" placeholder="Seu Endereço" title="Aqui é seu endereço residêncial" required="required"/>
                                             </div>
                                         </div>
                                     </div>
