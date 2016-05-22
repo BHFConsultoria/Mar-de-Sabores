@@ -22,20 +22,19 @@ class LoginBO {
         $resultado = $this->dao->verificaLogin($bean->getNmEmail(), $bean->getDsSenha(), $tpUsuario);
 
         if (empty($resultado)) {
-            echo "<script>alert('Usuário ou senha inválido!')</script>";
-            echo "<script>window.location.assign('../../index.php')</script>";
+            echo "usuário nao encontrado";
         } else {
             session_start();
 
-            $_SESSION['codigo'] = ($tpUsuario == 'confeiteiro') ? $resultado[0]['cd_confeiteiro'] : $resultado[0]['cd_cliente'];
+            $_SESSION['codigo'] = ($tpUsuario == 'confeiteiro') ? $resultado[0]['cd_confeiteiro'] : $resultado[0]['cd_cliente'] ;
             $_SESSION['nome'] = ($tpUsuario == 'confeiteiro') ? $resultado[0]['nm_confeiteiro'] : $resultado[0]['nm_cliente'];
             $_SESSION['nmEmail'] = $resultado[0]['nm_email'];
             $_SESSION['dsSenha'] = $resultado[0]['ds_senha'];
-            $_SESSION['nmRazaoSocial'] = $resultado[0]['nm_razao_social'];
-            $_SESSION['nmFantasia'] = $resultado[0]['nm_fantasia'];
+            ($tpUsuario == 'confeiteiro') ? $_SESSION['nmRazaoSocial'] = $resultado[0]['nm_razao_social'] : NULL ;
+            ($tpUsuario == 'confeiteiro') ? $_SESSION['nmFantasia'] = $resultado[0]['nm_fantasia'] : NULL ;
             $_SESSION['cdCpf'] = $resultado[0]['cd_cpf'];
-            $_SESSION['cdCnpj'] = $resultado[0]['cd_cnpj'];
-            $_SESSION['cdInscricaoEstadual'] = $resultado[0]['cd_inscricao_estadual'];
+            ($tpUsuario == 'confeiteiro') ? $_SESSION['cdCnpj'] = $resultado[0]['cd_cnpj'] : NULL ;
+            ($tpUsuario == 'confeiteiro') ? $_SESSION['cdInscricaoEstadual'] = $resultado[0]['cd_inscricao_estadual'] : NULL ;
             $_SESSION['dtNascimento'] = $resultado[0]['dt_nascimento'];
             $_SESSION['cdTelefone'] = $resultado[0]['cd_telefone'];
             $_SESSION['cdCelular'] = $resultado[0]['cd_celular'];
@@ -46,26 +45,13 @@ class LoginBO {
             $_SESSION['cdCep'] = $resultado[0]['cd_cep'];
             $_SESSION['sgUf'] = $resultado[0]['sg_uf'];
             $_SESSION['sgSexo'] = $resultado[0]['sg_sexo'];
-            $_SESSION['logado'] = true;
-
-            if ($tpUsuario == 'confeiteiro') {
-                header("Location: ../../view/confeiteiro/indexConfeiteiro.php");
-            } else {
+            $_SESSION['tpUsuario'] = $tpUsuario;
+            
+            if($tpUsuario == 'confeiteiro'){
+                header("Location: ../../view/confeiteiro/indexConfeiteiro.php"); 
+            }else{
                 header("Location: ../../view/cliente/indexCliente.php");
             }
-        }
-    }
-    
-    /** Função para verificar se o usuário está logado. */
-    public function logado() {
-
-        session_start();
-
-        if (!$_SESSION['logado']) {
-            echo "<script>alert('Você precisa estar logado para ver esta página!')</script>";
-            echo "<script>window.location.assign('../../index.php')</script>";
-        } else {
-            return true;
         }
     }
 

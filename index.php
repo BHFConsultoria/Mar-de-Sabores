@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+session_destroy(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +36,10 @@
                 <select id="tpUsuario" name="tpUsuario">
                     <option value="cliente">Cliente</option>
                     <option value="confeiteiro">Confeiteiro</option>
-                    <select/>
-                    <button type="submit" value="logar" name="acao">Acessar</button>
-                    <a href="view/confeiteiro/formConfeiteiro.php">Cadastra-se (Confeiteiro)</a>
+                <select/>
+                <button type="submit">Acessar</button>
+                <a href="view/confeiteiro/confeiteiro.php">Cadastra-se (Confeiteiro)</a> //
+                <a href="view/cliente/cliente.php">Cadastra-se (Cliente)</a>
             </form>
             <div class="slogan">
                 <a href="index.html"><img src="view/bootstrap/img/logo.png" alt="" /></a>
@@ -132,7 +136,7 @@
 
         </section>
         <!-- /Section: Newsletter -->
-        <footer>
+<footer>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
