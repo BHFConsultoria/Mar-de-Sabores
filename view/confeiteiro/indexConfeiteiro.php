@@ -40,7 +40,7 @@ $bo->logado();
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="../confeiteiro/formConfeiteiro.php">Alterar Cadastro</a></li>
+                            <li><a href="../confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
                             <li><a href="#">Desativar Cadastro</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
@@ -50,7 +50,7 @@ $bo->logado();
                 </nav>
             </div>
             <div class="slogan">
-                <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
+                <a href="/Mar-de-Sabores/index.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
             </div>
 

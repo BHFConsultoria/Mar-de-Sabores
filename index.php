@@ -20,7 +20,9 @@
         <link href="view/bootstrap/css/animate.css" rel="stylesheet" />
         <link href="view/bootstrap/css/style.css" rel="stylesheet">
         <link href="view/bootstrap/color/default.css" rel="stylesheet">
-
+        <!-- JavaScript de Validações -->
+        <script type="text/javascript" src="view/js/jquery-2.2.2.js"></script>
+        <script type="text/javascript" src="view/js/index.js"></script>
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -28,13 +30,13 @@
         <!-- Section: intro -->
         <section id="intro" class="intro">
             <form id="contact-form-login" action="controller/login/login.php" method="POST">
-                <input class="form-control-login" name="nmEmail" id="nmEmail" type="text" placeholder="Usuario" />
+                <input class="form-control-login" name="nmEmail" id="nmEmail" type="email" placeholder="Usuario" />
                 <input class="form-control-login" name="dsSenha" id="dsSenha" type="password" placeholder="Senha" />
                 <select id="tpUsuario" name="tpUsuario">
                     <option value="cliente">Cliente</option>
                     <option value="confeiteiro">Confeiteiro</option>
                     <select/>
-                    <button type="submit" value="logar" name="acao">Acessar</button>
+                    <button type="submit" value="logar" name="acao" onclick="return verificaCampos()">Acessar</button>
                     <a href="view/confeiteiro/formConfeiteiro.php">Cadastra-se (Confeiteiro)</a>
             </form>
             <div class="slogan">
