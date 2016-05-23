@@ -8,6 +8,19 @@ class ProdutoDAO extends AbstractDAO {
         $this->con = new Conexao();
     }
 
+    function listaProduto ($cdConfeiteiro){
+        try{
+            $query = "SELECT * FROM produto WHERE CONFEITEIRO_cd_confeiteiro = ?";
+            $pdo = $this->con->getConexao()->prepare($query);
+            $pdo->bindValue(1,$cdConfeiteiro);
+            $pdo->execute();
+            return $pdo->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $ex) {
+            echo $ex->getCode(), $ex->getFile(), $ex->getLine(), $ex->getMessage();
+        }
+        
+    }
+    
     function deletarProduto($bean) {
         try {
             $query="DELETE FROM produto WHERE cd_produto = ?";
@@ -37,19 +50,21 @@ class ProdutoDAO extends AbstractDAO {
     }
     function alterarProduto($bean){
         try{
-            $query ="UPDATE produto SET CONFEITEIRO_cd_confeiteiro =1"
+            $query ="UPDATE produto SET CONFEITEIRO_cd_confeiteiro =?"
                     . ",nm_produto=? ,vl_produto= ? ,ds_produto=? ,"
                     . "nm_tipo_produto=?,nm_situacao=?, nm_categoria= ? "
                     . "where cd_produto = ?";
             
             $pdo = $this->con->getConexao()->prepare($query);
-            $pdo->bindValue(1, $bean->getNmProduto());
-            $pdo->bindValue(2, $bean->getVlProduto());
-            $pdo->bindValue(3, $bean->getDsProduto());
-            $pdo->bindValue(4, $bean->getNmTipoProduto());
-            $pdo->bindValue(5, $bean->getNmSituacao());
-            $pdo->bindValue(6, $bean->getNmCategoria());
-            $pdo->bindValue(7, $bean->getCdProduto());
+            
+            $pdo->bindValue(1, $bean->getConfeiteiroCdConfeiteiro());
+            $pdo->bindValue(2, $bean->getNmProduto());
+            $pdo->bindValue(3, $bean->getVlProduto());
+            $pdo->bindValue(4, $bean->getDsProduto());
+            $pdo->bindValue(5, $bean->getNmTipoProduto());
+            $pdo->bindValue(6, $bean->getNmSituacao());
+            $pdo->bindValue(7, $bean->getNmCategoria());
+            $pdo->bindValue(8, $bean->getCdProduto());
             $pdo->execute();
             return "Produtos Alterados com sucesso";
         } catch (Exception $ex) {
@@ -62,7 +77,7 @@ class ProdutoDAO extends AbstractDAO {
             $query = "INSERT INTO produto (CONFEITEIRO_cd_confeiteiro,nm_produto,vl_produto,ds_produto,nm_tipo_produto,nm_situacao,nm_categoria)values(?,?,?,?,?,?,?)";
             $pdo = $this->con->getConexao()->prepare($query);
 
-            $pdo->bindValue(1, 1);
+            $pdo->bindValue(1, $_SESSION['codigo']);
             $pdo->bindValue(2, $bean->getNmProduto());
             $pdo->bindValue(3, $bean->getVlProduto());
             $pdo->bindValue(4, $bean->getDsProduto());
