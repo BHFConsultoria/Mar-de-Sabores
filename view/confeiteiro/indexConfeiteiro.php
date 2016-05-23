@@ -35,6 +35,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="../confeiteiro/confeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
                     <li><a href="#">Desativar Cadastro</a></li>
+                    <li><a href="../produto/listaProduto.php">Meus Produto</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">SAIR</a></li>
                 </ul>

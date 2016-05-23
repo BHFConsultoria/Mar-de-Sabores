@@ -30,6 +30,10 @@ h6 {
     color: #444;
 }
 
+
+
+
+
 blockquote {
 	font-family: Georgia, arial, sans-serif;
 	color: #bbb;
@@ -819,7 +823,7 @@ a.btn:hover {
 	}
 	
 	.navbar.navbar-custom.navbar-fixed-top {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 
 	
@@ -831,6 +835,4 @@ a.btn:hover {
 	}
 	
 }
-#contact-form-login {
-    padding-left: 40px;
-}
+
