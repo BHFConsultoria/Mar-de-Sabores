@@ -6,7 +6,7 @@ session_start();
 
 $bo = new ConfeiteiroBO();
 
-$acao = $_POST['acao'];
+$acao = $_REQUEST['acao'];
 
 if ($acao == 'cadastrar' || $acao == 'alterar') {
     $dados = [
@@ -43,16 +43,29 @@ switch ($acao) {
         echo "<script>window.location.assign('../../index.php')</script>";
         break;
     case 'alterar':
-        $dados['cd_confeiteiro'] = $_POST['cdConfeiteiro'];
+        $dados['cd_confeiteiro'] = $_SESSION['codigo'];
         $bean = $bo->populaBean($dados);
         $bo->alterarConfeiteiro($bean);
+        
+        $login = new LoginBO();
+        $email = $_SESSION['nmEmail'];
+        $senha = $_SESSION['dsSenha'];
+        $tpUsuario = $_SESSION['tpUsuario'];
+  
+        $login->verificaLogin($email, $senha, $tpUsuario);
+        
         echo "<script>alert('Dados alterados com sucesso!')</script>";
         echo "<script>window.location.assign('../../view/confeiteiro/indexConfeiteiro.php')</script>";
         break;
     
     case 'desativar':
-        $dao = new ConfeiteiroDAO();
-        $resultado = $bo->desativarConfeiteiro($_POST['cdConfeiteiro']);
-        echo $resultado;
+        $resultado = $bo->desativarConfeiteiro($_SESSION['codigo']);
+        echo "<script>alert('Usuário desativado com sucesso!')</script>";
+        echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/index.php')</script>";
+        break;
+    
+    case 'buscar':
+        $confeiteiros = $bo->buscarConfeiteiro($_REQUEST['buscar']);
+        include_once '../../view/confeiteiro/listaConfeiteiro.php';
         break;
 }

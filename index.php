@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +23,9 @@
         <link href="view/bootstrap/css/animate.css" rel="stylesheet" />
         <link href="view/bootstrap/css/style.css" rel="stylesheet">
         <link href="view/bootstrap/color/default.css" rel="stylesheet">
-
+        <!-- JavaScript de Validações -->
+        <script type="text/javascript" src="view/js/jquery-2.2.2.js"></script>
+        <script type="text/javascript" src="view/js/index.js"></script>
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -28,25 +33,27 @@
         <!-- Section: intro -->
         <section id="intro" class="intro">
             <form id="contact-form-login" action="controller/login/login.php" method="POST">
-                <input class="form-control-login" name="nmEmail" id="nmEmail" type="text" placeholder="Usuario" />
+                <input class="form-control-login" name="nmEmail" id="nmEmail" type="email" placeholder="Usuario" />
                 <input class="form-control-login" name="dsSenha" id="dsSenha" type="password" placeholder="Senha" />
                 <select id="tpUsuario" name="tpUsuario">
                     <option value="cliente">Cliente</option>
                     <option value="confeiteiro">Confeiteiro</option>
-                <select/>
-                <button type="submit">Acessar</button>
-                <a href="view/confeiteiro/confeiteiro.php">Cadastra-se (Confeiteiro)</a>
+                    <select/>
+                    <button type="submit" value="logar" name="acao" onclick="return verificaCampos()">Acessar</button>
+                    <a href="view/confeiteiro/formConfeiteiro.php">Cadastra-se (Confeiteiro)</a>
+                    <a href="view/cliente/cliente.php">Cadastra-se (Cliente)</a>
             </form>
             <div class="slogan">
                 <a href="index.html"><img src="view/bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
-                <div class="form-group">
-                    <input type="text" class="" id="email" placeholder="Digite aqui sua cidade" required="required"/>
-                </div>
-                <div class="form-group">   
-                    <button type="submit" class="" id="">
-                        BUSCAR CONFEITEIROS</button>
-                </div> 
+                <form action="controller/confeiteiro/confeiteiroController.php"> 
+                    <div class="form-group">
+                        <input type="text" class="" id="buscar" name="buscar" placeholder="" required="required"/>
+                    </div>
+                    <div class="form-group">   
+                        <button type="submit" id="acao" name="acao" value="buscar">BUSCAR CONFEITEIROS</button>
+                    </div> 
+                </form>
                 <h4></h4>
             </div>
             <div class="page-scroll">
@@ -132,7 +139,7 @@
 
         </section>
         <!-- /Section: Newsletter -->
-<footer>
+        <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">

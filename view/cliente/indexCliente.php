@@ -33,22 +33,21 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="../confeiteiro/confeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
+                    <li><a href="../cliente/cliente.php?acao=alterar">Alterar Cadastro</a></li>
                     <li><a href="#">Desativar Cadastro</a></li>
-                    <li><a href="../produto/listaProduto.php">Meus Produto</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">SAIR</a></li>
                 </ul>
             </div>
             <div class="slogan">
-                <a href="/Mar-de-Sabores/index.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
+                <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
             </div>
 
         </section>
         <!-- /Section: intro -->
 
-        <!-- Section: Area confeiteiro -->
+        <!-- Section: Area cliente -->
         <section id="about" class="home-section">
 
 
@@ -64,15 +63,6 @@
                                         <i class="fa fa-bars"></i>
                                     </button>
                                 </div>
-
-                                <div class="collapse navbar-collapse" id="menu">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
-                                        <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="">[Deletar produto]</a></li>
-                                    </ul>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -82,7 +72,7 @@
 
 
         </section>
-        <!-- /Section: Area confeiteiro -->
+        <!-- /Section: Area cliente -->
 
         <footer>
             <div class="container">
