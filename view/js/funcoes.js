@@ -35,3 +35,15 @@ function compararSenhas() {
     }
 
 }
+
+function confirmarDesativar(){
+    
+    var x = confirm('Deseja realmente desativar sua conta?');
+    
+    if(x){
+        return true;
+    }else{
+        return false;
+    }
+    
+}
