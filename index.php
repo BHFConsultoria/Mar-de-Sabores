@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+session_destroy(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,7 +137,7 @@
 
         </section>
         <!-- /Section: Newsletter -->
-        <footer>
+<footer>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">

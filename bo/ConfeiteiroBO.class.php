@@ -64,13 +64,15 @@ class ConfeiteiroBO extends AbstractBO {
    
 
         return $this->dao->alterarConfeiteiro($bean);
+        
     }
-
-    function desativarConfeiteiro($cdConfeiteiro) {
-
+    
+    function desativarConfeiteiro($cdConfeiteiro){
+        
         return $this->dao->desativarConfeiteiro($cdConfeiteiro);
+        
     }
-
+    
     /** Função para popular os atributos, retornando um objetos com os dados
       tratados pelos metodos setters */
     function populaBean($dados) {

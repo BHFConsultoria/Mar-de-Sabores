@@ -7,12 +7,12 @@ class ClienteDAO extends AbstractDAO {
         $this->con = new Conexao();
     }
 
-    function desativarCliente($bean){
+    function desativarCliente($cdCliente){
         try {
             $query = "UPDATE cliente SET nm_situacao = 'D' WHERE cd_cliente = ?";
             $pdo = $this->con->getConexao()->prepare($query);
             
-            $pdo->bindValue(1, $bean->getCdCliente());
+            $pdo->bindValue(1, $cdCliente);
             
             $pdo->Execute();
             
