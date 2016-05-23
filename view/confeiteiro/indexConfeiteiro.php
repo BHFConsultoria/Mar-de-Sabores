@@ -37,7 +37,7 @@
                     <li><a href="#">Desativar Cadastro</a></li>
                     <li><a href="../produto/listaProduto.php">Meus Produto</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">SAIR</a></li>
+                    <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
                 </ul>
             </div>
             <div class="slogan">
