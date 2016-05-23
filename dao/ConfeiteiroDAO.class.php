@@ -40,9 +40,9 @@ class ConfeiteiroDAO extends AbstractDAO {
 
             $pdo->execute();
 
-//            if ($pdo->rowCount()) {
-//                return "Cadastro realizado com sucesso";
-//            }
+            if ($pdo->rowCount()) {
+                return "Cadastro realizado com sucesso";
+            }
         } catch (Exception $e) {
             echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
         }
@@ -106,7 +106,28 @@ class ConfeiteiroDAO extends AbstractDAO {
             echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
         }
     }
-
+    
+    public function buscarConfeiteiro($nmConfeiteiro){
+        
+        try{
+            $query = "SELECT * FROM confeiteiro WHERE nm_confeiteiro like('%{$nmConfeiteiro}%')";
+            
+            $pdo = $this->con->getConexao()->prepare($query);
+            
+            //$pdo->bindValue(1,"$nmConfeiteiro");
+            
+            $pdo->execute();
+            
+            $resultado = $pdo->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $resultado;
+            
+        } catch (Exception $ex) {
+            echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
+        }
+        
+    }
+    
     protected function getTabela() {
         return "confeiteiro";
     }
