@@ -58,7 +58,7 @@ class ConfeiteiroBO extends AbstractBO {
             $this->findCnpjByCnpj($bean->getCdCnpj());
         }
 
-        $validacao->validaEmail($bean->getNmEmail());
+        //$validacao->validaEmail($bean->getNmEmail());
         
         $this->findEmailByEmail($bean->getNmEmail());
    
