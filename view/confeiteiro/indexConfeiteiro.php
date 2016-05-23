@@ -20,7 +20,8 @@
         <link href="../bootstrap/css/animate.css" rel="stylesheet" />
         <link href="../bootstrap/css/style.css" rel="stylesheet">
         <link href="../bootstrap/color/default.css" rel="stylesheet">
-
+        
+        <script type="text/javascript" src="../../view/js/funcoes.js"></script>
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
@@ -36,7 +37,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="../confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar">Desativar Cadastro</a></li>
+                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativar() ">Desativar Cadastro</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
                         </ul>
