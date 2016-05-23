@@ -24,6 +24,8 @@ if (!isset($_SESSION)){
         <link href="../bootstrap/css/animate.css" rel="stylesheet" />
         <link href="../bootstrap/css/style.css" rel="stylesheet">
         <link href="../bootstrap/color/default.css" rel="stylesheet">
+         <!-- JavaScript de Validações -->
+         <script type="text/javascript" src="../../view/js/funcoes.js"></script>
         
 
     </head>
@@ -110,7 +112,7 @@ if (!isset($_SESSION)){
                             <div class="row">
                             <div class="col-lg-8 col-md-8">
                             <div class="form-group">
-                            <input type="text" class="form-control" id="vlProduto" name="vlProduto" value="<?=$_SESSION['vlProduto']?>" placeholder="Valor" title="Aqui é o valor do Produto" required="required"/>
+                            <input type="text" class="form-control" id="vlProduto" name="vlProduto" value="<?=$_SESSION['vlProduto']?>" onkeypress ="return apenasNumeros(this);"  maxlength="7" placeholder="Valor" title="Aqui é o valor do Produto" required="required"/>
                             </div>
                             </div> 
                             </div>

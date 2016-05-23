@@ -47,3 +47,6 @@ function confirmarDesativar(){
     }
     
 }
+function ValidaValor(){
+    
+}

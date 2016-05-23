@@ -8,7 +8,7 @@ $bo = new ProdutoBO();
 //$dao = new ProdutoDAO();
 
 $acao= $_POST['acao'];
-var_dump($acao);
+
 if ($acao == 'cadastrar' || $acao == 'alterar'){
     $vlProduto = str_replace(",",".", $_POST['vlProduto']);
     $dados = [
