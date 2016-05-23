@@ -36,7 +36,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="../confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                            <li><a href="#">Desativar Cadastro</a></li>
+                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar">Desativar Cadastro</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
                         </ul>
@@ -71,7 +71,6 @@
 
                                 <div class="collapse navbar-collapse" id="menu">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="../confeiteiro/confeiteiro.php">[Alterar cadastro]</a></li>
                                         <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
                                         <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="">[Deletar produto]</a></li>
                                     </ul>

@@ -6,7 +6,7 @@ class Validacoes {
 
         if (strlen($nmEmail) < 8 || substr_count($nmEmail, "@") != 1 || substr_count($nmEmail, ".") == 0) {
             echo "<script>alert('O email digitado é inválido!')</script>";
-            echo "<script>window.location.assign('index.php')</script>";
+            echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/index.php')</script>";
             return exit();
         }
     }

@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-session_destroy(); 
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,17 +41,19 @@ session_destroy();
                     <select/>
                     <button type="submit" value="logar" name="acao" onclick="return verificaCampos()">Acessar</button>
                     <a href="view/confeiteiro/formConfeiteiro.php">Cadastra-se (Confeiteiro)</a>
+                    <a href="view/cliente/cliente.php">Cadastra-se (Cliente)</a>
             </form>
             <div class="slogan">
                 <a href="index.html"><img src="view/bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
-                <div class="form-group">
-                    <input type="text" class="" id="email" placeholder="Digite aqui sua cidade" required="required"/>
-                </div>
-                <div class="form-group">   
-                    <button type="submit" class="" id="">
-                        BUSCAR CONFEITEIROS</button>
-                </div> 
+                <form action="controller/confeiteiro/confeiteiroController.php"> 
+                    <div class="form-group">
+                        <input type="text" class="" id="buscar" name="buscar" placeholder="" required="required"/>
+                    </div>
+                    <div class="form-group">   
+                        <button type="submit" id="acao" name="acao" value="buscar">BUSCAR CONFEITEIROS</button>
+                    </div> 
+                </form>
                 <h4></h4>
             </div>
             <div class="page-scroll">
@@ -137,7 +139,7 @@ session_destroy();
 
         </section>
         <!-- /Section: Newsletter -->
-<footer>
+        <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">

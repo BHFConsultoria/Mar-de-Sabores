@@ -22,8 +22,12 @@ class LoginBO {
         $resultado = $this->dao->verificaLogin($bean->getNmEmail(), $bean->getDsSenha(), $tpUsuario);
 
         if (empty($resultado)) {
-            echo "usuário nao encontrado";
-        } else {
+            echo "<script>alert('Usuário ou senha inválido!')</script>";
+            echo "<script>window.location.assign('../../index.php')</script>";
+        }else if($resultado[0]['nm_situacao']=='D'){
+            echo "<script>alert('Usuário desativado!')</script>";
+            echo "<script>window.location.assign('../../index.php')</script>";
+        }else {
             session_start();
 
             $_SESSION['codigo'] = ($tpUsuario == 'confeiteiro') ? $resultado[0]['cd_confeiteiro'] : $resultado[0]['cd_cliente'] ;
@@ -46,6 +50,10 @@ class LoginBO {
             $_SESSION['sgUf'] = $resultado[0]['sg_uf'];
             $_SESSION['sgSexo'] = $resultado[0]['sg_sexo'];
             $_SESSION['tpUsuario'] = $tpUsuario;
+            
+            if($_REQUEST['acao'] == 'alterar'){
+                return true;
+            }
             
             if($tpUsuario == 'confeiteiro'){
                 header("Location: ../../view/confeiteiro/indexConfeiteiro.php"); 
