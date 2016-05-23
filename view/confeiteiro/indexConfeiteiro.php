@@ -20,25 +20,30 @@
         <link href="../bootstrap/css/animate.css" rel="stylesheet" />
         <link href="../bootstrap/css/style.css" rel="stylesheet">
         <link href="../bootstrap/color/default.css" rel="stylesheet">
-
+        
+        <script type="text/javascript" src="../../view/js/funcoes.js"></script>
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
         <!-- Section: intro -->
         <section id="intro" class="intro-pages">
-            <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
-            <div class="btn-group ">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="../confeiteiro/confeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                    <li><a href="#">Desativar Cadastro</a></li>
-                    <li><a href="../produto/listaProduto.php">Meus Produto</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
-                </ul>
+            <div id="navigation">
+                <nav class="navbar navbar-custom" role="navigation">
+                    <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="../confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
+                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativar() ">Desativar Cadastro</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
+                        </ul>
+                    </div>         
+
+                </nav>
             </div>
             <div class="slogan">
                 <a href="/Mar-de-Sabores/index.php"><img src="../bootstrap/img/logo.png" alt="" /></a>

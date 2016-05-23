@@ -25,6 +25,12 @@ if (!isset($_SESSION)) {
         <link href="../bootstrap/css/animate.css" rel="stylesheet" />
         <link href="../bootstrap/css/style.css" rel="stylesheet">
         <link href="../bootstrap/color/default.css" rel="stylesheet">
+        
+        <!-- JavaScript de Validações -->
+        <script type="text/javascript" src="../../view/js/jquery-2.2.2.js"></script>
+        <script type="text/javascript" src="../../view/js/funcoes.js"></script>
+        <script type="text/javascript" src="../confeiteiro/js/confeiteiro.js"></script>
+        
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -107,6 +113,7 @@ if (!isset($_SESSION)) {
                                         <div class="col-lg-4 col-md-4">
 
                                             <select class="form-control" id="sgSexo" name="sgSexo">
+                                                <option value="<?= $_SESSION['sgSexo'] ?>"><?php echo($_SESSION['sgSexo'] == 'F') ? 'Feminino' : 'Masculino'; ?></option>
                                                 <option value="F">Feminino</option>
                                                 <option value="M">Masculino</option>
                                             </select>
@@ -140,7 +147,7 @@ if (!isset($_SESSION)) {
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="cdCpf" name="cdCpf" value="<?= $_SESSION['cdCpf'] ?>" placeholder="Seu CPF" title="Aqui é seu cpf" required="required"/>
+                                                <input type="text" class="form-control" id="cdCpf" name="cdCpf" value="<?= $_SESSION['cdCpf'] ?>" onkeypress="mascara(this, '###.###.###-##'); return apenasNumeros(this);" maxlength="14" placeholder="Seu CPF" title="Aqui é seu cpf" required="required"/>
                                             </div>
                                         </div>
 
@@ -150,7 +157,7 @@ if (!isset($_SESSION)) {
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="cdCep" name="cdCep" value="<?= $_SESSION['cdCep'] ?>" placeholder="Seu CEP" title="Aqui é o CEP da sua residência" required="required"/>
+                                                <input type="text" class="form-control" id="cdCep" name="cdCep" value="<?= $_SESSION['cdCep'] ?>" onkeypress="mascara(this, '#####-###'); return apenasNumeros(this);" maxlength="9" placeholder="Seu CEP" title="Aqui é o CEP da sua residência" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-8 col-md-8">
@@ -186,7 +193,7 @@ if (!isset($_SESSION)) {
                                     <div class="row" id="senha">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="dsSenha" name="dsSenha" value="<?= $_SESSION['dsSenha'] ?>" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
+                                                <input type="text" class="form-control" id="dsSenha" name="dsSenha" value="" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
@@ -196,9 +203,9 @@ if (!isset($_SESSION)) {
                                         </div>
                                     </div>
                                     <?php if ($_REQUEST['acao'] == 'alterar') { ?>
-                                        <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="alterar">Alterar</button>
+                                        <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="alterar" onclick="return compararSenhas()">Alterar</button>
                                     <?php } else { ?>
-                                        <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="cadastrar">Cadastrar</button>
+                                        <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="cadastrar" onclick="return compararSenhas(); return validarCPF()">Cadastrar</button>
                                     <?php } ?>
                                 </div>
                             </form>
