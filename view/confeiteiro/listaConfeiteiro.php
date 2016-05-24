@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'Mar-de-Sabores/Mar-de-Sabores/cabecalhoConfeiteiro.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/cabecalhoConfeiteiro.php'; ?>
     <table class="table-bordered">
         <tr>
             <td>Nome</td>
@@ -11,4 +11,4 @@
         </tr><?php } ?>
         <?php } ?>
     </table>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'Mar-de-Sabores/Mar-de-Sabores/rodape.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/rodape.php'; ?>
