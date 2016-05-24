@@ -1,27 +1,27 @@
 <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12">
-                        <p>&copy;Copyright 2016 . Mar de Sabores - O Portal do Confeiteiros</p>
-                    </div>
-
-                </div>	
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <p>&copy;Copyright 2016 . Mar de Sabores - O Portal do Confeiteiros</p>
             </div>
-        </footer>
 
-        <!-- Core JavaScript Files -->
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.min.js"></script>
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.easing.min.js"></script>	
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.sticky.js"></script>
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.scrollTo.js"></script>
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/stellar.js"></script>
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/wow.min.js"></script>
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/owl.carousel.min.js"></script>
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/nivo-lightbox.min.js"></script>
+        </div>	
+    </div>
+</footer>
 
-        <script src="/marDeSabores/marDeSabores/view/bootstrap/js/custom.js"></script>
+<!-- Core JavaScript Files -->
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.min.js"></script>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/bootstrap.min.js"></script>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.easing.min.js"></script>	
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.sticky.js"></script>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/jquery.scrollTo.js"></script>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/stellar.js"></script>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/wow.min.js"></script>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/owl.carousel.min.js"></script>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/nivo-lightbox.min.js"></script>
 
-    </body>
+<script src="/marDeSabores/marDeSabores/view/bootstrap/js/custom.js"></script>
+
+</body>
 
 </html>
