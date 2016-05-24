@@ -11,6 +11,8 @@ $acao= $_POST['acao'];
 
 if ($acao == 'cadastrar' || $acao == 'alterar'){
     $vlProduto = str_replace(",",".", $_POST['vlProduto']);
+    //$vlProduto = numeroParaMoeda ($_POST['vlProduto']);
+  
     $dados = [
         'cd_produto'=> '',
         'CONFEITEIRO_cd_confeiteiro'=> $_SESSION['codigo'],
@@ -53,6 +55,7 @@ switch ($acao){
         $produto = $bo->findByPk($_POST['cdProduto']);
         $bean = $bo->populaBean($produto[0]);
         $bo->desativarProduto($bean);
+        header('Location: ../../view/produto/listaProduto.php');
         break;
     case 'deletar';
         $produto = $bo->findByPk($_POST['cdProduto']);
