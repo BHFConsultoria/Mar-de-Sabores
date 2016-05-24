@@ -9,17 +9,18 @@
         <title>Mar de Sabores - O Portal dos Confeiteiros</title>
 
         <!-- CSS -->
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/css/nivo-lightbox.css" rel="stylesheet" />
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/css/owl.carousel.css" rel="stylesheet" media="screen" />
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/css/owl.theme.css" rel="stylesheet" media="screen" />	
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/css/animate.css" rel="stylesheet" />
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/css/style.css" rel="stylesheet">
-        <link href="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/color/default.css" rel="stylesheet">
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/nivo-lightbox.css" rel="stylesheet" />
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/owl.carousel.css" rel="stylesheet" media="screen" />
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/owl.theme.css" rel="stylesheet" media="screen" />	
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/animate.css" rel="stylesheet" />
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/style.css" rel="stylesheet">
+        <link href="/marDeSabores/marDeSabores/view/bootstrap/color/default.css" rel="stylesheet">
         
-        <script type="text/javascript" src="/Mar-de-Sabores/Mar-de-Sabores/view/js/funcoes.js"></script>
+        <!-- Validações -->
+        <script type="text/javascript" src="/marDeSabores/marDeSabores/view/js/funcoes.js"></script>
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
@@ -34,17 +35,17 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="/Mar-de-Sabores/Mar-de-Sabores/controller/confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                            <li><a href="/Mar-de-Sabores/Mar-de-Sabores/controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativar() ">Desativar Cadastro</a></li>
+                            <li><a href="/marDeSabores/marDeSabores/view/confeiteiro/formConfeiteiro.php">Alterar Cadastro</a></li>
+                            <li><a href="/marDeSabores/marDeSabores/controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativar() ">Desativar Cadastro</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/Mar-de-Sabores/Mar-de-Sabores/controller/login/login.php?acao=deslogar">SAIR</a></li>
+                            <li><a href="/marDeSabores/marDeSabores/controller/login/login.php?acao=deslogar">SAIR</a></li>
                         </ul>
                     </div>         
 
                 </nav>
             </div>
             <div class="slogan">
-                <a href="/Mar-de-Sabores/Mar-de-Sabores/index.php"><img src="/Mar-de-Sabores/Mar-de-Sabores/view/bootstrap/img/logo.png" alt="" /></a>
+                <a href="/marDeSabores/marDeSabores/index.php"><img src="/marDeSabores/marDeSabores/view/bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
             </div>
             </section>

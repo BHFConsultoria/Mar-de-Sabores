@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
         <!-- /Section: intro -->
-        <?php include_once $_SERVER['DOCUMENT_ROOT'].'Mar-de-Sabores/Mar-de-Sabores/cabecalhoConfeiteiro.php'; ?>
+        <?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/cabecalhoConfeiteiro.php'; ?>
         <!-- Section: Area confeiteiro -->
         <section id="about" class="home-section">
 
@@ -39,4 +39,4 @@
         </section>
         <!-- /Section: Area confeiteiro -->
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'Mar-de-Sabores/Mar-de-Sabores/rodape.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/rodape.php'; ?>
