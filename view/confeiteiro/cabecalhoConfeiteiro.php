@@ -20,7 +20,7 @@
         <link href="../bootstrap/color/default.css" rel="stylesheet">
         
         <!-- Validações -->
-        <script type="text/javascript" src="/marDeSabores/marDeSabores/view/js/funcoes.js"></script>
+        <script type="text/javascript" src="../js/funcoes.js"></script>
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
@@ -45,7 +45,7 @@
                 </nav>
             </div>
             <div class="slogan">
-                <a href="/marDeSabores/marDeSabores/index.php"><img src="/marDeSabores/marDeSabores/view/bootstrap/img/logo.png" alt="" /></a>
+                <a href="../../index.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
             </div>
             </section>
