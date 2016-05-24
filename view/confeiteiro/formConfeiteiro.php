@@ -4,7 +4,8 @@ if (!isset($_SESSION)) {
     session_start();
 }
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/cabecalhoConfeiteiro.php'; ?>
+
+<?php include 'cabecalhoConfeiteiro.php'; ?>
 <!-- /Section: intro -->
 
 <!-- Section: Formulario PF -->
@@ -170,4 +171,4 @@ if (!isset($_SESSION)) {
 </section>
 <!-- /Section: Formulario PF -->
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/rodape.php'; ?>
+<?php include 'rodape.php'; ?>

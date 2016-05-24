@@ -9,15 +9,15 @@
         <title>Mar de Sabores - O Portal dos Confeiteiros</title>
 
         <!-- CSS -->
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/nivo-lightbox.css" rel="stylesheet" />
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/owl.carousel.css" rel="stylesheet" media="screen" />
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/owl.theme.css" rel="stylesheet" media="screen" />	
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/animate.css" rel="stylesheet" />
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/css/style.css" rel="stylesheet">
-        <link href="/marDeSabores/marDeSabores/view/bootstrap/color/default.css" rel="stylesheet">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../bootstrap/css/nivo-lightbox.css" rel="stylesheet" />
+        <link href="../bootstrap/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+        <link href="../bootstrap/css/owl.carousel.css" rel="stylesheet" media="screen" />
+        <link href="../bootstrap/css/owl.theme.css" rel="stylesheet" media="screen" />	
+        <link href="../bootstrap/css/animate.css" rel="stylesheet" />
+        <link href="../bootstrap/css/style.css" rel="stylesheet">
+        <link href="../bootstrap/color/default.css" rel="stylesheet">
         
         <!-- Validações -->
         <script type="text/javascript" src="/marDeSabores/marDeSabores/view/js/funcoes.js"></script>
@@ -35,10 +35,10 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="/marDeSabores/marDeSabores/view/confeiteiro/formConfeiteiro.php">Alterar Cadastro</a></li>
-                            <li><a href="/marDeSabores/marDeSabores/controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativar() ">Desativar Cadastro</a></li>
+                            <li><a href="formConfeiteiro.php">Alterar Cadastro</a></li>
+                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativar() ">Desativar Cadastro</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/marDeSabores/marDeSabores/controller/login/login.php?acao=deslogar">SAIR</a></li>
+                            <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
                         </ul>
                     </div>         
 
