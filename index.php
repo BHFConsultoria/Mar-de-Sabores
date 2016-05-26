@@ -46,7 +46,7 @@ session_destroy();
             <div class="slogan">
                 <a href="index.html"><img src="view/bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
-                <form action="controller/confeiteiro/confeiteiroController.php"> 
+                <form action="controller/confeiteiro/confeiteiro.php"> 
                     <div class="form-group">
                         <input type="text" class="" id="buscar" name="buscar" placeholder="" required="required"/>
                     </div>

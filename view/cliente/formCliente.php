@@ -1,72 +1,10 @@
 <?php
-include_once '../../controller/cliente/clienteController.php';
 if (!isset($_SESSION)) {
     session_start();
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>Mar de Sabores - O Portal dos Confeiteiros</title>
-
-        <!-- CSS -->
-        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="../bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="../bootstrap/css/nivo-lightbox.css" rel="stylesheet" />
-        <link href="../bootstrap/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-        <link href="../bootstrap/css/owl.carousel.css" rel="stylesheet" media="screen" />
-        <link href="../bootstrap/css/owl.theme.css" rel="stylesheet" media="screen" />	
-        <link href="../bootstrap/css/animate.css" rel="stylesheet" />
-        <link href="../bootstrap/css/style.css" rel="stylesheet">
-        <link href="../bootstrap/color/default.css" rel="stylesheet">
-        
-        <!-- JavaScript de Validações -->
-        <script type="text/javascript" src="../../view/js/jquery-2.2.2.js"></script>
-        <script type="text/javascript" src="../../view/js/funcoes.js"></script>
-        <script type="text/javascript" src="../confeiteiro/js/confeiteiro.js"></script>
-        
-    </head>
-
-    <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-
-        <!-- Section: intro -->
-        <section id="intro" class="intro-pages">
-            <?php if ($_REQUEST['acao'] == 'alterar') { ?>
-                <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
-                <div class="btn-group ">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="../cliente/cliente.php?acao=alterar">Alterar Cadastro</a></li>
-                        <li><a href="#">Desativar Cadastro</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">SAIR</a></li>
-                    </ul>
-                </div>
-                <div class="slogan">
-                    <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
-                    <h3>Os melhores bolos e doces na sua casa!</h3>
-                </div>
-            <?php } else { ?> 
-                <div class="slogan">
-                    <a href="index.html"><img src="../bootstrap/img/logo.png" alt="" /></a>
-                    <h3>Os melhores bolos e doces na sua casa!</h3>
-                </div>
-                <div class="page-scroll">
-                    <a href="#about">
-                        <i class="fa fa-angle-down fa-5x animated"></i>
-                    </a>
-                </div>
-            <?php } ?>
-        </section>
+        <?php include_once 'cabecalhoCliente.php'; ?>
         <!-- /Section: intro -->
 
         <!-- Section: Formulario PF -->
@@ -219,30 +157,4 @@ if (!isset($_SESSION)) {
         </section>
         <!-- /Section: Formulario PF -->
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12">
-                        <p>&copy;Copyright 2016 . Mar de Sabores - O Portal do Confeiteiros</p>
-                    </div>
-
-                </div>	
-            </div>
-        </footer>
-
-        <!-- Core JavaScript Files -->
-        <script src="../bootstrap/js/jquery.min.js"></script>
-        <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <script src="../bootstrap/js/jquery.easing.min.js"></script>	
-        <script src="../bootstrap/js/jquery.sticky.js"></script>
-        <script src="../bootstrap/js/jquery.scrollTo.js"></script>
-        <script src="../bootstrap/js/stellar.js"></script>
-        <script src="../bootstrap/js/wow.min.js"></script>
-        <script src="../bootstrap/js/owl.carousel.min.js"></script>
-        <script src="../bootstrap/js/nivo-lightbox.min.js"></script>
-
-        <script src="../bootstrap/js/custom.js"></script>
-
-    </body>
-
-</html>
+        <?php include_once 'rodape.php'; ?>
