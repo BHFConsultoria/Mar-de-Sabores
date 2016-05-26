@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 
         <!-- /Section: intro -->
-        <?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/cabecalhoConfeiteiro.php'; ?>
+        <!-- ?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/cabecalhoConfeiteiro.php'; ?> -->
+        <?php include_once '../../view/confeiteiro/cabecalhoConfeiteiro.php'; ?>
         <!-- Section: Area confeiteiro -->
         <section id="about" class="home-section">
 
@@ -23,7 +24,7 @@
                                 <div class="collapse navbar-collapse" id="menu">
                                     <ul class="nav navbar-nav">
                                         <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
-                                        <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="">[Deletar produto]</a></li>
+                                        <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="../produto/listaProduto.php">[Deletar produto]</a></li>
                                     </ul>
                                 </div>
 
@@ -39,4 +40,5 @@
         </section>
         <!-- /Section: Area confeiteiro -->
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/rodape.php'; ?>
+<!--?php include_once $_SERVER['DOCUMENT_ROOT'].'marDeSabores/marDeSabores/rodape.php'; ?>-->
+<?php include_once '../../view/confeiteiro/rodape.php'; ?>
