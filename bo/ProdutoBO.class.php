@@ -16,10 +16,10 @@ class ProdutoBO extends AbstractBO {
         return $this->dao->listaProduto($cdConfeiteiro);
     }
 
-    function desativarProduto($bean) {
-        return $this->dao->desativarProduto($bean);
+    function desativarProduto($cdProduto) {
+        return $this->dao->desativarProduto($cdProduto);
     }
-
+    
     function deletarProduto($bean) {
         return $this->dao->deletarProduto($bean);
     }

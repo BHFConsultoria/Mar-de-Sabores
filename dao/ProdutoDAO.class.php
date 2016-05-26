@@ -21,11 +21,11 @@ class ProdutoDAO extends AbstractDAO {
         
     }
     
-    function deletarProduto($bean) {
+    function deletarProduto($cdProduto) {
         try {
             $query="DELETE FROM produto WHERE cd_produto = ?";
             $pdo = $this->con->getConexao()->prepare($query);
-            $pdo->bindValue(1, $bean->getCdProduto());
+            $pdo->bindValue(1, $cdProduto);
             $pdo->execute();
             if ($pdo->rowCount()) {
                 return "Produto Deletada";
@@ -35,17 +35,17 @@ class ProdutoDAO extends AbstractDAO {
         }
     }
 
-    function desativarProduto($bean) {
+    function desativarProduto($cdProduto) {
         try {
             $query = "UPDATE produto SET nm_situacao = 'D' WHERE cd_produto = ?";
             $pdo = $this->con->getConexao()->prepare($query);
-            $pdo->bindValue(1, $bean->getCdProduto());
+            $pdo->bindValue(1, $cdProduto);
             $pdo->execute();
-            if ($pdo->rowCount()) {
+           
                 return "Produto Desativado";
-            }
-        } catch (Exception $ex) {
-            echo $ex->getCode(), $ex->getFile(), $ex->getLine(), $ex->getMessage();
+                           
+        } catch (Exception $e) {
+            echo $e->getCode(), $e->getFile(), $e->getLine(), $e->getMessage();
         }
     }
     function alterarProduto($bean){

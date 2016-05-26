@@ -3,7 +3,8 @@ include_once '../../controller/produto/produto.php';
 ?>
 <?php session_start() ?>
 <!DOCTYPE html>
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/cabecalhoConfeiteiro.php'; ?>
+<!-- ?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/cabecalhoConfeiteiro.php'; ?>-->
+<?php include_once '../../view/produto/cabecalhoProduto.php'; ?> 
         <section id="produto" class="home-section text-center">    
             <div class="heading-contact">
                 <div class="container">
@@ -25,42 +26,46 @@ include_once '../../controller/produto/produto.php';
                     <th style=" text-align:center; ">Valor</th>    
                     <th style=" text-align:center; ">Descrição</th>     
                     <th style=" text-align:center; ">Tipo</th>  
-                    <th style=" text-align:center; ">Situação</th>    
+                    <th style=" text-align:center; ">Situação</th> 
+                    <th style=" text-align:center; "> </th> 
                     <th style=" text-align:center; ">Ações</th>     
                     </thead>
                     <tbody>
                         <?php foreach ($produtos as $produto) { ?>
                             <tr> 
-                                <td> <?= $produto['nm_produto'] ?></td>     
-                                <td> R$ <?= $produto['vl_produto'] ?></td>  
-                                <td> <?= $produto['ds_produto'] ?></td> 
-                                <td> <?= $produto['nm_tipo_produto'] ?></td> 
-                                <td> <?= $produto['nm_situacao'] ?></td> 
-                            </tr>
-                            <tr>
-                                <td>  
+                                <td align="center"> <?= $produto['nm_produto'] ?></td>     
+                                <td align="center"> R$ <?= $produto['vl_produto'] ?></td>  
+                                <td align="center"> <?= $produto['ds_produto'] ?></td> 
+                                <td align="center"> <?= $produto['nm_tipo_produto'] ?></td> 
+                                <td align="center"> <?= $produto['nm_situacao'] ?></td> 
+                            
+                                <td align="center">  
                                     <form action="../../controller/produto/produtoController.php" method="POST">
 
                                         <input type="hidden" name="acao" value="alterarDados"/>
                                         <input type="hidden" name="cdProduto" value="<?= $produto['cd_produto'] ?>"/>
                                         <button class="btn btn-primary" >Alterar</button>
                                     </form>
-                                    
+                                </td>
+                                <td align="center"> 
                                     <form action="../../controller/produto/produtoController.php" method="POST">
                                     <input type="hidden" name="acao" value="deletar"/>
                                     <input type="hidden" name="cdProduto" value="<?= $produto['cd_produto'] ?>"/>
                                     <button class="btn btn-danger">Remover</button>  
                                     </form>
-                                    
+                                </td>
+                                <td align="center">  
                                     <form action="../../controller/produto/produtoController.php" method="POST">
                                     <input type="hidden" name="acao" value="desativar"/>
                                     <input type="hidden" name="cdProduto" value="<?= $produto['cd_produto'] ?>"/>
-                                    <button class="btn btn-danger">Desativar</button>
+                                    <button class="btn btn-primary" >Desativar</button>
                                     </form>
-
+                                </td>
+                                <td> 
                                     <?php echo $produto['cd_produto']; ?>
+                                    
                                 <?php } ?>
-                                </form></td> 
+                                </td> 
                         </tr>         
                     </tbody>
                 </table>       
@@ -68,6 +73,7 @@ include_once '../../controller/produto/produto.php';
                 <!-- </table> -->
             </div> 
         </section>       
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/rodape.php'; ?>
+        <!-- ?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/rodape.php'; ?>-->
+        <?php include_once '../../view/produto/rodape.php'; ?> 
 
 

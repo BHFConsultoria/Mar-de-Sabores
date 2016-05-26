@@ -9,7 +9,9 @@ if (!isset($_SESSION)){
     <head>
         <meta charset="utf-8">
     </head>
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/cabecalhoConfeiteiro.php'; ?>
+<!--?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/cabecalhoConfeiteiro.php'; ?>-->
+<?php include_once '../../view/produto/cabecalhoProduto.php'; ?> 
+
 <!-- Section: intro -->
 <!-- Section: intro -->
 <!-- Section: Area produto --> 
@@ -98,5 +100,6 @@ if (!isset($_SESSION)){
 
 <!-- /Section: Formulario PF -->
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/rodape.php'; ?>
+<!--?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/rodape.php'; ?-->
+<?php include_once '../../view/produto/rodape.php'; ?> 
 

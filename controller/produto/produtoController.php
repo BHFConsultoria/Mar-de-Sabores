@@ -52,15 +52,13 @@ switch ($acao){
         header('Location: ../../view/produto/Produto.php?acao=alterarDados');
         break;
     case 'desativar';
-        $produto = $bo->findByPk($_POST['cdProduto']);
-        $bean = $bo->populaBean($produto[0]);
-        $bo->desativarProduto($bean);
+        $bo->desativarProduto($_POST['cdProduto']);
+        echo "<script>alert('Produto desativado com sucesso!')</script>";
+        echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/indexConfeiteiro.php')</script>";
         header('Location: ../../view/produto/listaProduto.php');
         break;
     case 'deletar';
-        $produto = $bo->findByPk($_POST['cdProduto']);
-        $bean = $bo->populaBean($produto[0]);
-        $bo->deletarProduto($bean);
+        $bo->deletarProduto($_POST['cdProduto']);
         header('Location: ../../view/produto/listaProduto.php');
         break;
 }
