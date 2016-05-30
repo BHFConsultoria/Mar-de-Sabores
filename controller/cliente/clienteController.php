@@ -5,10 +5,8 @@ require_once '../../config.inc.php';
 session_start();
 
 $bo = new ClienteBO();
-//$dao = new ClienteDAO();
 
-$acao = $_POST['acao'];
-
+$acao = $_REQUEST['acao'];
 
 if ($acao == 'cadastrar' || $acao == 'alterar') {
 
@@ -30,11 +28,7 @@ if ($acao == 'cadastrar' || $acao == 'alterar') {
         'cd_celular' => $_POST['cdCelular'],
         'nm_situacao' => 'A'
     ];
-} else {
-    //$cdCliente = $_POST['cdCliente'];
-}
-
-//var_dump($dados);
+} 
 
 switch ($acao) {
 
@@ -60,16 +54,11 @@ switch ($acao) {
         echo "<script>window.location.assign('../../view/cliente/indexCliente.php')</script>";
         break;
 
-//    case 'alterarDados';
-//        $usuario = $dao->findByPk($_POST['cdCliente']);
-//        $bean = $bo->populaBean($usuario[0]);
-//        include_once '../../view/cliente/cliente.php';
-//        break;
-
     case 'desativar':
 
         $resultado = $bo->desativarCliente($_POST['cdCliente']);
-
+        echo "<script>alert('Usuário desativado com sucesso!')</script>";
+        echo "<script>window.location.assign('../../index.php')</script>";
         break;
 }
 

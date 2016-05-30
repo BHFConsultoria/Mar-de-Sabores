@@ -20,7 +20,9 @@
         <link href="../bootstrap/color/default.css" rel="stylesheet">
         
         <!-- Validações -->
+        <script type="text/javascript" src="../js/jquery-2.2.2.js"></script>
         <script type="text/javascript" src="../js/funcoes.js"></script>
+
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
@@ -35,8 +37,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="formConfeiteiro.php">Alterar Cadastro</a></li>
-                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativar() ">Desativar Cadastro</a></li>
+                            <li><a href="formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
+                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativarConta(); ">Desativar Cadastro</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
                         </ul>

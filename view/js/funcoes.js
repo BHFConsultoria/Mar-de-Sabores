@@ -1,5 +1,10 @@
 $(document).ready(function () {
-
+ 
+    if ($("#acao").val() == 'alterar') {
+        $("#cdCpf").attr("readonly", true);
+        $("#cdCnpj").attr("readonly", true);
+    }
+    
 });
 
 function apenasNumeros(evento) {
@@ -36,7 +41,7 @@ function compararSenhas() {
 
 }
 
-function confirmarDesativar(){
+function confirmarDesativarConta(){
     
     var x = confirm('Deseja realmente desativar sua conta?');
     

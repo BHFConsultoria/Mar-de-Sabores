@@ -1,9 +1,11 @@
 <?php
 
 require_once '../../config.inc.php';
-
+session_start();
 $bo = new ConfeiteiroBO();
 
-$usuarios = $bo->listAll();
+$_SESSION['confeiteiros'] = $bo->buscarConfeiteiro($_REQUEST['buscar']);
+
+header('Location: ../../view/confeiteiro/listaConfeiteiro.php');
 
 
