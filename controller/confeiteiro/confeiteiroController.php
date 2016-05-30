@@ -9,8 +9,8 @@ $bo = new ConfeiteiroBO();
 $acao = $_REQUEST['acao'];
 
 if ($acao == 'cadastrar' || $acao == 'alterar') {
-    $dados = [
-        
+    
+    $dados = [       
         'cd_confeiteiro' => '',
         'nm_confeiteiro' => $_POST['nmConfeiteiro'],
         'nm_email' => $_POST['nmEmail'],
@@ -61,11 +61,7 @@ switch ($acao) {
     case 'desativar':
         $resultado = $bo->desativarConfeiteiro($_SESSION['codigo']);
         echo "<script>alert('Usuário desativado com sucesso!')</script>";
-        echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/index.php')</script>";
+        echo "<script>window.location.assign('../../index.php')</script>";
         break;
-    
-    case 'buscar':
-        $confeiteiros = $bo->buscarConfeiteiro($_REQUEST['buscar']);
-        include_once '../../view/confeiteiro/listaConfeiteiro.php';
-        break;
+
 }

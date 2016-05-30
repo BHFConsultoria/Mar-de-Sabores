@@ -3,8 +3,8 @@ include_once '../../controller/produto/produto.php';
 ?>
 <?php session_start() ?>
 <!DOCTYPE html>
-<!-- ?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/cabecalhoConfeiteiro.php'; ?>-->
-<?php include_once '../../view/produto/cabecalhoProduto.php'; ?> 
+
+<?php include_once './cabecalhoProduto.php'; ?> 
         <section id="produto" class="home-section text-center">    
             <div class="heading-contact">
                 <div class="container">
@@ -51,14 +51,14 @@ include_once '../../controller/produto/produto.php';
                                     <form action="../../controller/produto/produtoController.php" method="POST">
                                     <input type="hidden" name="acao" value="deletar"/>
                                     <input type="hidden" name="cdProduto" value="<?= $produto['cd_produto'] ?>"/>
-                                    <button class="btn btn-danger">Remover</button>  
+                                    <button class="btn btn-danger" onclick="return confirmarExcluirProduto()">Remover</button>  
                                     </form>
                                 </td>
                                 <td align="center">  
                                     <form action="../../controller/produto/produtoController.php" method="POST">
                                     <input type="hidden" name="acao" value="desativar"/>
                                     <input type="hidden" name="cdProduto" value="<?= $produto['cd_produto'] ?>"/>
-                                    <button class="btn btn-primary" >Desativar</button>
+                                    <button class="btn btn-primary" onclick="return confirmarDesativarProduto()">Desativar</button>
                                     </form>
                                 </td>
                                 <td> 

@@ -15,7 +15,7 @@ class ConfeiteiroBO extends AbstractBO {
         if ($bean->getCdCpf() != '') {
             if (!$validacao->validaCpf($bean->getCdCpf())) {
                 echo "<script>alert('CPF inválido!')</script>";
-                echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/view/confeiteiro/formConfeiteiro.php')</script>";
+                echo "<script>window.location.assign('../../view/confeiteiro/formConfeiteiro.php')</script>";
                 return exit();
             }
             $this->findCpfByCpf($bean->getCdCpf());
@@ -24,7 +24,7 @@ class ConfeiteiroBO extends AbstractBO {
         if ($bean->getCdCnpj() != '') {
             if (!$validacao->validaCnpj($bean->getCdCnpj())) {
                 echo "<script>alert('CNPJ inválido!')</script>";
-                echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/view/confeiteiro/formConfeiteiro.php')</script>";
+                echo "<script>window.location.assign('../../view/confeiteiro/formConfeiteiro.php')</script>";
                 return exit();
             }
             $this->findCnpjByCnpj($bean->getCdCnpj());
@@ -43,7 +43,7 @@ class ConfeiteiroBO extends AbstractBO {
         if ($bean->getCdCpf() != '') {
             if (!$validacao->validaCpf($bean->getCdCpf())) {
                 echo "<script>alert('CPF inválido!')</script>";
-                echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/view/confeiteiro/formConfeiteiro.php')</script>";
+                echo "<script>window.location.assign('../../view/confeiteiro/formConfeiteiro.php')</script>";
                 return exit();
             }
             $this->findCpfByCpf($bean->getCdCpf());
@@ -52,7 +52,7 @@ class ConfeiteiroBO extends AbstractBO {
         if ($bean->getCdCnpj() != '') {
             if (!$validacao->validaCnpj($bean->getCdCnpj())) {
                 echo "<script>alert('CNPJ inválido!')</script>";
-                echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/view/confeiteiro/formConfeiteiro.php')</script>";
+                echo "<script>window.location.assign('../../view/confeiteiro/formConfeiteiro.php')</script>";
                 return exit();
             }
             $this->findCnpjByCnpj($bean->getCdCnpj());

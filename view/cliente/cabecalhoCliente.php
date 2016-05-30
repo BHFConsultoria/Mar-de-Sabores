@@ -22,8 +22,6 @@
         <!-- Validações -->
         <script type="text/javascript" src="../js/jquery-2.2.2.js"></script>
         <script type="text/javascript" src="../js/funcoes.js"></script>
-        <script type="text/javascript" src="js/produto.js"></script>
-
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
@@ -38,8 +36,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="../confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                            <li><a href="../../controller/confeiteiro/confeiteiroController.php??acao=desativar" onclick="return confirmarDesativarConta(); ">Desativar Cadastro</a></li>
+                            <li><a href="formCliente.php?acao=alterar">Alterar Cadastro</a></li>
+                            <li><a href="../../controller/cliente/clienteController.php?acao=desativar" onclick="return confirmarDesativarConta(); ">Desativar Cadastro</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
                         </ul>
@@ -48,7 +46,7 @@
                 </nav>
             </div>
             <div class="slogan">
-                <a href="../confeiteiro/indexConfeiteiro.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
+                <a href="indexCliente.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
             </div>
             </section>

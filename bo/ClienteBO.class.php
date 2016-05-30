@@ -11,6 +11,20 @@ class ClienteBO extends AbstractBO {
     
     function cadastrarCliente($bean){
         
+        $validacao = new Validacoes();
+
+        if ($bean->getCdCpf() != '') {
+            if (!$validacao->validaCpf($bean->getCdCpf())) {
+                echo "<script>alert('CPF inválido!')</script>";
+                echo "<script>window.location.assign('../../view/cliente/formCliente.php')</script>";
+                return exit();
+            }
+            $this->findCpfByCpf($bean->getCdCpf());
+        }
+        
+        $validacao->validaEmail($bean->getNmEmail());
+        $this->findEmailByEmail($bean->getNmEmail());
+        
         return $this->dao->cadastrarCliente($bean);
     }
     
@@ -20,6 +34,19 @@ class ClienteBO extends AbstractBO {
     }
     
     function alterarCliente($bean){
+        
+        $validacao = new Validacoes();
+
+        if ($bean->getCdCpf() != '') {
+            if (!$validacao->validaCpf($bean->getCdCpf())) {
+                echo "<script>alert('CPF inválido!')</script>";
+                echo "<script>window.location.assign('../../view/cliente/formCliente.php')</script>";
+                return exit();
+            }
+            $this->findCpfByCpf($bean->getCdCpf());
+        }
+        
+        $this->findEmailByEmail($bean->getNmEmail());
         
         return $this->dao->alterarCliente($bean);
     }
