@@ -144,20 +144,19 @@ if (!isset($_SESSION)) {
                             <div class="row" id="senha">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="dsSenha" name="dsSenha" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
+                                        <input type="password" class="form-control" id="dsSenha" name="dsSenha" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="dsConfirmaSenha" name="dsConfirmaSenha" placeholder="Confirme sua senha" title="Digite novamente sua senha" required="required"/>
+                                        <input type="password" class="form-control" id="dsConfirmaSenha" name="dsConfirmaSenha" placeholder="Confirme sua senha" title="Digite novamente sua senha" required="required"/>
                                     </div>
                                 </div>
                             </div>
                             <?php if ($_REQUEST['acao'] == 'alterar') { ?>
                                 <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="alterar"  onclick="return compararSenhas()">Alterar</button>
                             <?php } else { ?>
-                                <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="cadastrar" onclick="return compararSenhas();
-                                        return validarCPF()">Cadastrar</button>
+                                <button type="submit" class="btn btn-skin btn-block" id="acao" name="acao" value="cadastrar" onclick="return compararSenhas()">Cadastrar</button>
                                     <?php } ?>
                         </div>
                     </form>
