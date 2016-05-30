@@ -41,10 +41,10 @@ session_destroy();
                     <select/>
                     <button type="submit" value="logar" name="acao" onclick="return verificaCampos()">Acessar</button>
                     <a href="view/confeiteiro/formConfeiteiro.php">Cadastra-se (Confeiteiro)</a>
-                    <a href="view/cliente/cliente.php">Cadastra-se (Cliente)</a>
+                    <a href="view/cliente/formCliente.php">Cadastra-se (Cliente)</a>
             </form>
             <div class="slogan">
-                <a href="index.html"><img src="view/bootstrap/img/logo.png" alt="" /></a>
+                <a href="index.php"><img src="view/bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
                 <form action="controller/confeiteiro/confeiteiro.php"> 
                     <div class="form-group">
