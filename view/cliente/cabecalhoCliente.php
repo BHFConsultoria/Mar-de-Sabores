@@ -46,7 +46,7 @@
                 </nav>
             </div>
             <div class="slogan">
-                <a href="../../index.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
+                <a href="indexCliente.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
                 <h3>Os melhores bolos e doces na sua casa!</h3>
             </div>
             </section>

@@ -131,12 +131,12 @@ if (!isset($_SESSION)) {
                                     <div class="row" id="senha">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="dsSenha" name="dsSenha" value="" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
+                                                <input type="password" class="form-control" id="dsSenha" name="dsSenha" value="" placeholder="Digite sua senha" title="Aqui é a sua senha" required="required"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="dsConfirmaSenha" name="dsConfirmaSenha" value="" placeholder="Confirme sua senha" title="Digite novamente sua senha" required="required"/>
+                                                <input type="password" class="form-control" id="dsConfirmaSenha" name="dsConfirmaSenha" value="" placeholder="Confirme sua senha" title="Digite novamente sua senha" required="required"/>
                                             </div>
                                         </div>
                                     </div>

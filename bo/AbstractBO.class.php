@@ -31,7 +31,7 @@ abstract class AbstractBO {
             return true;
         }else if(!empty($resultado)){
             echo "<script>alert('Este email já possui cadastro em nosso sistema')</script>";
-            echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/index.php')</script>";
+            echo "<script>window.location.assign('../../index.php')</script>";
             return exit();
         }
         
@@ -47,7 +47,7 @@ abstract class AbstractBO {
             return true;
         }else if(!empty($resultado)){
             echo "<script>alert('Este cpf já está cadastrado em nosso sistema')</script>";
-            echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/index.php')</script>";
+            echo "<script>window.location.assign('../../index.php')</script>";
             return exit();
         }
         
@@ -64,7 +64,7 @@ abstract class AbstractBO {
             return true;
         }else if(!empty($resultado)){
             echo "<script>alert('Este cnpj já está cadastrado em nosso sistema')</script>";
-            echo "<script>window.location.assign('/Mar-de-Sabores/Mar-de-Sabores/index.php')</script>";
+            echo "<script>window.location.assign('../../index.php')</script>";
             return exit();;
         }
         
