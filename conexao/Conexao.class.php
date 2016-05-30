@@ -4,7 +4,7 @@ class Conexao {
 
     private static $host = 'localhost';
     private static $user = 'root';
-    private static $pass = '';
+    private static $pass = 'root';
     private static $db = 'mar_de_sabores';
     /** @var PDO */
     private static $connect = null;
