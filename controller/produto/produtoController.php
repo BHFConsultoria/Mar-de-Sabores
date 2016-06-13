@@ -5,9 +5,9 @@ require_once '../../config.inc.php';
 session_start();
 
 $bo = new ProdutoBO();
-//$dao = new ProdutoDAO();
 
-$acao = $_POST['acao'];
+
+$acao = $_REQUEST['acao'];
 
 if ($acao == 'cadastrar' || $acao == 'alterar') {
     $vlProduto = str_replace(",", ".", $_POST['vlProduto']);
@@ -26,13 +26,14 @@ if ($acao == 'cadastrar' || $acao == 'alterar') {
 }
 switch ($acao) {
 
-    case 'cadastrar';
+    case 'cadastrar':
         $bean = $bo->populaBean($dados);
         $bo->cadastrarProduto($bean);
         echo "<script>alert('Produto Cadastrado com Sucesso!!!')</script>";
         echo "<script>window.location.assign('../../view/produto/produto.php')</script>";
         break;
-    case 'alterar';
+    
+    case 'alterar':
         $dados['cd_produto'] = $_SESSION['cdProduto'];
         $bean = $bo->populaBean($dados);
         $bo->alterarProduto($bean);
@@ -46,20 +47,29 @@ switch ($acao) {
         echo "<script>alert('Dados Alterados com Sucesso!')</script>";
         echo "<script>window.location.assign('../../view/produto/listaProduto.php')</script>";
         break;
-    case 'alterarDados';
+    
+    case 'alterarDados':
         $produto = $bo->findByPk($_POST['cdProduto']);
         $bo->carregaProduto($produto);
         header('Location: ../../view/produto/produto.php?acao=alterarDados');
         break;
-    case 'desativar';
+    
+    case 'desativar':
         $bo->desativarProduto($_POST['cdProduto']);
         echo "<script>alert('Produto desativado com sucesso!')</script>";
         echo "<script>window.location.assign('../../view/produto/listaProduto.php')</script>";
         break;
-    case 'deletar';
+    
+    case 'deletar':
         $bo->deletarProduto($_POST['cdProduto']);
         echo "<script>alert('Produto deletado com sucesso!')</script>";
         echo "<script>window.location.assign('../../view/produto/listaProduto.php')</script>";
         break;
+    
+    case 'buscarProduto':
+        $produtos = $bo->buscarProduto($_POST['nmProduto']);
+        echo "<script>window.location.assign('../../view/produto/listaProdutoCliente.php')</script>";
+        break;
+        
 }
 

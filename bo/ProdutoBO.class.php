@@ -19,13 +19,23 @@ class ProdutoBO extends AbstractBO {
     function desativarProduto($cdProduto) {
         return $this->dao->desativarProduto($cdProduto);
     }
-    
+
     function deletarProduto($bean) {
         return $this->dao->deletarProduto($bean);
     }
 
     function alterarProduto($bean) {
         return $this->dao->alterarProduto($bean);
+    }
+
+    public function buscarProduto($nmProduto) {
+        $resultado = $this->dao->buscarProduto($nmProduto);
+        
+        session_start();
+        
+        $_SESSION['produtos'] = $resultado;
+        
+        return 0;
     }
 
     function populaBean($dados) {
@@ -54,7 +64,6 @@ class ProdutoBO extends AbstractBO {
         $_SESSION['nmTipoProduto'] = $produto[0]['nm_tipo_produto'];
         $_SESSION['nmSituacao'] = $produto[0]['nm_situacao'];
         $_SESSION['nmCategoria'] = $produto[0]['nm_categoria'];
-        header("Location: ../../view/produto/produto.php");
     }
 
     protected function getDAO() {

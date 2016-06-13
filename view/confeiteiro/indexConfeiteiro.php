@@ -23,7 +23,9 @@
                                 <div class="collapse navbar-collapse" id="menu">
                                     <ul class="nav navbar-nav">
                                         <li><a href="../produto/produto.php">[Cadastrar produto]</a></li>
-                                        <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>                                            <li><a href="../produto/listaProduto.php">[Deletar produto]</a></li>
+                                        <li><a href="../produto/listaProduto.php">[Alterar produto]</a></li>  
+                                        <li><a href="../produto/listaProduto.php">[Deletar produto]</a></li>
+                                        <li><a href="../pedido/indexPedido.php">[Pedidos]</a></li> 
                                     </ul>
                                 </div>
 

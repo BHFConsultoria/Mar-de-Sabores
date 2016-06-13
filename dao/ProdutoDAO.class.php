@@ -94,6 +94,23 @@ class ProdutoDAO extends AbstractDAO {
             echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
         }
     }
+    
+    public function buscarProduto($nmProduto){
+        try{
+            $query = "SELECT * FROM produto WHERE nm_produto like('%{$nmProduto}%')";
+            
+            $pdo = $this->con->getConexao()->prepare($query);
+            
+            $pdo->execute();
+            
+            $resultado = $pdo->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $resultado;
+            
+        } catch (Exception $e) {
+            echo $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine();
+        }
+    }
 
     protected function getTabela() {
         return "produto";
