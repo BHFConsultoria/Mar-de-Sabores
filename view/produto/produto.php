@@ -1,5 +1,4 @@
 <?php
-include_once '../../controller/produto/produtoController.php';
 if (!isset($_SESSION)){
     session_start();
 }
