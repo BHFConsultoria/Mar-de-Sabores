@@ -40,8 +40,10 @@ session_destroy();
                     <option value="confeiteiro">Confeiteiro</option>
                     <select/>
                     <button type="submit" value="logar" name="acao" onclick="return verificaCampos()">Acessar</button>
-                    <a href="view/confeiteiro/formConfeiteiro.php">Cadastra-se (Confeiteiro)</a>
-                    <a href="view/cliente/formCliente.php">Cadastra-se (Cliente)</a>
+                    <br>
+                    <a style="color: white;">Cadastra-se: </a>&nbsp;
+                    <a href="view/confeiteiro/formConfeiteiro.php" style="color: white;">(Confeiteiro)</a>&nbsp;ou&nbsp;
+                    <a href="view/cliente/formCliente.php" style="color: white;"> (Cliente)</a>
             </form>
             <div class="slogan">
                 <a href="index.php"><img src="view/bootstrap/img/logo.png" alt="" /></a>
@@ -72,8 +74,13 @@ session_destroy();
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12" >
+                        <div class="slogan">
+                            <br><br>
+                                    <h3> Diversos Tipos de Bolos, Doces, Tortas, tudo em um só lugar! </h3>
+                                </div>
                         <div class="wow bounceInUp" data-wow-delay="0.4s">
                             <div id="owl-works" class="owl-carousel">
+                                
                                 <div class="item"><a href="view/bootstrap/img/gallery/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="view/bootstrap/img/gallery/1.jpg" class="img-responsive" alt="img"></a></div>
                                 <div class="item"><a href="view/bootstrap/img/gallery/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="view/bootstrap/img/gallery/2.jpg" class="img-responsive " alt="img"></a></div>
                                 <div class="item"><a href="view/bootstrap/img/gallery/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="view/bootstrap/img/gallery/3.jpg" class="img-responsive " alt="img"></a></div>
@@ -89,7 +96,7 @@ session_destroy();
 
         <!-- Section: icones -->
         <section id="separator" class="home-section parallax text-center" data-stellar-background-ratio="0.5">
-
+            <br><br><br><br>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6 col-sm-3 col-md-3">
@@ -97,8 +104,7 @@ session_destroy();
                             <div class="icon">
                                 <img src="view/bootstrap/img/local.png">
                             </div>
-                            <span class="color-white">Selecione sua <br><b>Cidade</b></span>
-
+                            <span class="color-white">Selecione sua <br>Cidade</span>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3">
@@ -106,7 +112,7 @@ session_destroy();
                             <div class="icon">
                                 <img src="view/bootstrap/img/conf.png">
                             </div>
-                            <span class="color-white">Escolha seu <br><b>Confeiteiro</b></span>
+                            <span class="color-white">Escolha seu <br>Confeiteiro</span>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3">
@@ -114,7 +120,7 @@ session_destroy();
                             <div class="icon">
                                 <img src="view/bootstrap/img/produto.png">
                             </div>
-                            <span class="color-white">Escolha seu <br><b>Produto</b></span>
+                            <span class="color-white">Escolha seu <br>Produto</span>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3">
@@ -122,7 +128,7 @@ session_destroy();
                             <div class="icon">
                                 <img src="view/bootstrap/img/data.png">
                             </div>
-                            <span class="color-white">Agende uma data para <br><b>Entrega</b></span>
+                            <span class="color-white">Agende uma data para <br>Entrega</span>
                         </div>
                     </div>
                 </div>		

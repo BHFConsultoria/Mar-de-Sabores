@@ -1,3 +1,7 @@
+<?php
+include_once '../../controller/confeiteiro/confeiteiroController.php';
+?>
+
 <html lang="en">
 
     <head>
@@ -18,7 +22,7 @@
         <link href="../bootstrap/css/animate.css" rel="stylesheet" />
         <link href="../bootstrap/css/style.css" rel="stylesheet">
         <link href="../bootstrap/color/default.css" rel="stylesheet">
-        
+
         <!-- Validações -->
         <script type="text/javascript" src="../js/jquery-2.2.2.js"></script>
         <script type="text/javascript" src="../js/funcoes.js"></script>
@@ -31,41 +35,49 @@
             <div id="navigation">
                 <nav class="navbar navbar-custom" role="navigation">
                     <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                            <li><a href="../../controller/confeiteiro/confeiteiroController.php?acao=desativar" onclick="return confirmarDesativarConta(); ">Desativar Cadastro</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
-                        </ul>
-                    </div>         
+                            
 
                 </nav>
             </div>
             <div class="slogan">
                 <a href="../../index.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
-                <h3>Os melhores bolos e doces na sua casa!</h3>
             </div>
-            </section>
-<?php session_start(); ?>
-    <table class="table-bordered">
-        <tr>
-            <td>Nome</td>
-            <td>Email p/ contato</td>
-            <td>Telefone p/ contato</td>
-            <td>Celular p/ contato</td>
-        </tr>
-        <?php foreach($_SESSION['confeiteiros'] as $confeiteiro){ ?>
-        <tr><?php if($confeiteiro['nm_situacao']!='D'){ ?>
-            <td><?=$confeiteiro['nm_confeiteiro']?></td>
-            <td><?=$confeiteiro['nm_email']?></td>
-            <td><?=$confeiteiro['cd_telefone']?></td>
-            <td><?=$confeiteiro['cd_celular']?></td>
-        </tr><?php } ?>
-        <?php } ?>
-    </table>
-<?php include 'rodape.php'; ?>
+        </section>
+        
+        
+        <?php session_start(); ?>
+        <section id="produto" class="home-section text-center">    
+            <div class="heading-contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-offset-2">
+                            <div class="wow bounceInDown" data-wow-delay="0.4s">
+                                <h2>Lista de Confeiteiros</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <table width="100%" style="margin: auto;" class="fonte alturaTabela table-responsive table-hover table-striped"> 
+                    <thead>
+
+                    <th style=" text-align:center; ">Nome</th>
+                    <th style=" text-align:center; ">Email p/ contato</th>
+                    <th style=" text-align:center; ">Telefone p/ contato</th>
+                    <th style=" text-align:center; ">Celular p/ contato</th>
+                    </thead>
+                    <tbody> 
+                    <?php foreach ($_SESSION['confeiteiros'] as $confeiteiro) { ?>
+                        <tr><?php if ($confeiteiro['nm_situacao'] != 'D') { ?>
+                                <td align="center"><?= $confeiteiro['nm_confeiteiro'] ?></td>
+                                <td align="center"><?= $confeiteiro['nm_email'] ?></td>
+                                <td align="center"><?= $confeiteiro['cd_telefone'] ?></td>
+                                <td align="center"><?= $confeiteiro['cd_celular'] ?></td>
+                            </tr><?php } ?>
+                    <?php } ?>
+                    </tbody>       
+                </table>
+            </div>
+        </section> 
+        <?php include 'rodape.php'; ?>
