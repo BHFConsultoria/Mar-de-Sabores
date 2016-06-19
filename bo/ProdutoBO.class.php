@@ -65,6 +65,12 @@ class ProdutoBO extends AbstractBO {
         $_SESSION['nmSituacao'] = $produto[0]['nm_situacao'];
         $_SESSION['nmCategoria'] = $produto[0]['nm_categoria'];
     }
+    function exibeProduto($produto){
+        session_start();
+        $_SESSION['nmProduto'] = $produto[0]['nm_produto'];
+         header("Location: ../../view/produto/listaProdutoCliente.php");
+        return ;
+    }
 
     protected function getDAO() {
         return $this->dao;

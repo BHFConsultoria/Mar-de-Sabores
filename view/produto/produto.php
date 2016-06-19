@@ -19,7 +19,7 @@ if (!isset($_SESSION)){
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-offset-2">                   
-                    <?php if ($_REQUEST['acao'] == 'alterarDados') { ?>
+                    <?php if ($_REQUEST['acao'] == 'carregaProduto') { ?>
                         <div class="section-heading">
                             <div class="wow bounceInDown" data-wow-delay="0.4s">
                                 <h2>alterar produto</h2>
