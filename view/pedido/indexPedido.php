@@ -28,7 +28,7 @@
             <?php } else { ?>
                 <td align="center"> <?= $pedido['nm_cliente'] ?></td> 
             <?php } ?>
-            <input type="hidden" name="cdPedido" value="<?=$pedido['cd_pedido']?>"/>
+            <input type="hidden" name="cdPedido" value="<?= $pedido['cd_pedido'] ?>"/>
 
             <td align="center">  
                 <button class="btn btn-danger" name="acao" value="deletar" onclick="return confirmarExcluirPedido()">Excluir pedido</button>

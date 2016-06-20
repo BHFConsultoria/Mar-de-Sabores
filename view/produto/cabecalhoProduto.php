@@ -1,3 +1,7 @@
+<?php session_start(); 
+
+?>
+
 <html lang="en">
 
     <head>
@@ -38,8 +42,13 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
+                            <?php if($_SESSION['tpUsuario'] == 'cliente'){ ?>
+                            <li><a href="../cliente/formCliente.php?acao=alterar">Alterar Cadastro</a></li>
+                            <li><a href="../../controller/cliente/clienteController.php?acao=desativar" onclick="return confirmarDesativarConta(); ">Desativar Cadastro</a></li>
+                            <?php }else{ ?>
                             <li><a href="../confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
-                            <li><a href="../../controller/confeiteiro/confeiteiroController.php??acao=desativar" onclick="return confirmarDesativarConta(); ">Desativar Cadastro</a></li>
+                            <li><a href="../../controller/confeiteiro/confeiteiroController.php??acao=desativar" onclick="return confirmarDesativarConta(); ">Desativar Cadastro</a></li>                           
+                            <?php } ?>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
                         </ul>
@@ -48,8 +57,10 @@
                 </nav>
             </div>
             <div class="slogan">
-               
+               <?php if($_SESSION['tpUsuario'] == 'cliente'){ ?>
+                <a href="../cliente/indexCliente.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
+               <?php }else{ ?>
                 <a href="../confeiteiro/indexConfeiteiro.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
-                
+               <?php } ?>
             </div>
             </section>

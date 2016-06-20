@@ -30,11 +30,11 @@ class ProdutoBO extends AbstractBO {
 
     public function buscarProduto($nmProduto) {
         $resultado = $this->dao->buscarProduto($nmProduto);
-        
+
         session_start();
-        
+
         $_SESSION['produtos'] = $resultado;
-        
+
         return 0;
     }
 
@@ -65,13 +65,7 @@ class ProdutoBO extends AbstractBO {
         $_SESSION['nmSituacao'] = $produto[0]['nm_situacao'];
         $_SESSION['nmCategoria'] = $produto[0]['nm_categoria'];
     }
-    function exibeProduto($produto){
-        session_start();
-        $_SESSION['nmProduto'] = $produto[0]['nm_produto'];
-         header("Location: ../../view/produto/listaProdutoCliente.php");
-        return ;
-    }
-
+    
     protected function getDAO() {
         return $this->dao;
     }
