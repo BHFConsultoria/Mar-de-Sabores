@@ -65,11 +65,10 @@ switch ($acao) {
         echo "<script>alert('Produto deletado com sucesso!')</script>";
         echo "<script>window.location.assign('../../view/produto/listaProduto.php')</script>";
         break;
-    
-    case 'buscarProduto':
-        $produtos = $bo->buscarProduto($_POST['nmProduto']);
-        echo "<script>window.location.assign('../../view/produto/listaProdutoCliente.php')</script>";
+    case 'vizualizar';
+        $produto = $bo->findByPk($_POST['cdProduto']);
+        $bo->exibeProduto($produto);
+        header('Location: ../../view/produto/listaProdutoCliente.php?acao=alterarDados');
         break;
-        
 }
 

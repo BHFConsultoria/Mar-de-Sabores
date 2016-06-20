@@ -61,11 +61,9 @@ include_once '../../controller/produto/produto.php';
                                     <button class="btn btn-primary" onclick="return confirmarDesativarProduto()">Desativar</button>
                                     </form>
                                 </td>
-                                <td> 
-                                    <?php echo $produto['cd_produto']; ?>
-                                    
+                  
                                 <?php } ?>
-                                </td> 
+                                
                         </tr>         
                     </tbody>
                 </table>       
