@@ -1,5 +1,9 @@
-<?php session_start() ?>
-<?php include_once 'cabecalhoProduto.php' ?>
+<?php
+include_once '../../controller/produto/produtoController.php';
+session_start();
+?>
+<!DOCTYPE html>
+<?php include_once './cabecalhoProduto.php'; ?> 
 <!-- /Section: intro -->
 <!-- Section: Area Cadastro Produto -->
 <section id="produto" class="home-section text-left">
@@ -22,39 +26,37 @@
 
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <img src="../bootstrap/img/bolo-decorado-chocolate.jpg">
+                <img src="../../view/bootstrap/img/bolo-decorado-chocolate.jpg">
 
             </div>	
             <div class="col-lg-6 col-md-6" id="">
-                <h2 class="text-center"><?= $_POST['nmProduto'] ?></h2>
-                <p>
-                    Código do Produto: <?= $_POST['cdProduto'] ?><br>
-                    Categoria: <?= $_POST['nmTipoProduto'] ?><br>
-                    <b>Valor: R$ <?= $_POST['vlProduto'] ?></b>
-                </p>
-                <p>
-                    <b>Descrição do Produto</b><br>
-                    <?= $_POST['dsProduto'] ?>
-                </p>
-                <p><b>Formas de Pagamento</b></p>
-                <img src="../bootstrap/img/bandeiras.jpg">
-                <p>
-                    <!-- Input hidden para realizar o pedido-->
-                <form action="../../controller/pedido/pedidoController.php" method="POST">
-                    <input type="hidden" name="cdProduto" value="<?= $_POST['cdProduto'] ?>"/>
-                    <input type="hidden" name="cdConfeiteiro" value="<?= $_POST['cdConfeiteiro'] ?>"/>
-                    <input type="hidden" name="cdCliente" value="<?= $_SESSION['codigo'] ?>"
-                    <!-- ---------------------------------- -->
-                    <button type="submit" name="acao" value="cadastrar">Encomendar produto</button> 
-                </form>
-                </p>
-            </div>	
+                
+                    <h2 class="text-center"><?php $_SESSION['nmProduto'] ?> </h2>
+                    <p>
+                        Código do Produto: 002<br>
+                        Categoria: Bolos - Bolos Chocolate<br>
+                        <b>Valor: R$ 49,00</b>
+                    </p>
+                    <p><b>Formas de Pagamento</b></p>
+                    <img src="../../view/bootstrap/img/bandeiras.jpg">
 
+                </div>	
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <p>
+                        <b>Descrição do Produto</b><br>
+                        Bolo de Chocolate com Recheio de Brigadeiro e Cobertura de Brigadeiro com Granulado.
+                    </p>
+                    <p>
+                        <b>Pedido Mínimo:</b><br> 2kg. Bolos acima de 3kg serão em forma quadrada.
+                    </p>
+                    <b>Quantidade Recomendada:</b><br> 100g para cada 1 pessoa
+
+                </div>	
+            </div>
         </div>
-    </div>
-</section>
-<!-- /Section: Formulario PF -->
-
-
-
-<?php include_once './rodape.php'; ?>
+    
+    </section>
+    <!-- /Section: Formulario PF -->
