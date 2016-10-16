@@ -1,5 +1,4 @@
 <?php
-include_once '../../controller/produto/produtoController.php';
 session_start();
 ?>
 <!DOCTYPE html>
@@ -30,33 +29,36 @@ session_start();
 
             </div>	
             <div class="col-lg-6 col-md-6" id="">
-                
-                    <h2 class="text-center"><?php $_SESSION['nmProduto'] ?> </h2>
-                    <p>
-                        Código do Produto: 002<br>
-                        Categoria: Bolos - Bolos Chocolate<br>
-                        <b>Valor: R$ 49,00</b>
-                    </p>
-                    <p><b>Formas de Pagamento</b></p>
-                    <img src="../../view/bootstrap/img/bandeiras.jpg">
 
-                </div>	
+                <h2 class="text-center"><?php echo $_POST['nmProduto'] ?> </h2>
+                <p>
+                    Código do Produto: <?php echo $_POST['cdProduto'] ?><br>
+                    Categoria: <?php echo $_POST['nmTipoProduto'] ?><br>
+                    <b>Valor: R$ <?php echo $_POST['vlProduto'] ?></b>
 
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <p>
-                        <b>Descrição do Produto</b><br>
-                        Bolo de Chocolate com Recheio de Brigadeiro e Cobertura de Brigadeiro com Granulado.
-                    </p>
-                    <p>
-                        <b>Pedido Mínimo:</b><br> 2kg. Bolos acima de 3kg serão em forma quadrada.
-                    </p>
-                    <b>Quantidade Recomendada:</b><br> 100g para cada 1 pessoa
+                </p>
+                <p><b>Formas de Pagamento</b></p>
+                <img src="../../view/bootstrap/img/bandeiras.jpg">
 
-                </div>	
-            </div>
+                <form action="../../controller/pedido/pedidoController.php" method="POST">
+                    <input type="hidden" name="cdProduto" value="<?= $_POST['cdProduto'] ?>"/>
+                    <input type="hidden" name="cdConfeiteiro" value="<?= $_POST['cdConfeiteiro'] ?>"/>
+                    <input type="hidden" name="cdCliente" value="<?= $_SESSION['codigo'] ?>"
+                           <!-- ---------------------------------- -->
+                           <button type="submit" name="acao" value="cadastrar">Encomendar produto</button> 
+                </form>
+            </div>	
+
         </div>
-    
-    </section>
-    <!-- /Section: Formulario PF -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <p>
+                    <b>Descrição do Produto</b><br>
+                    <?php echo $_POST['dsProduto'] ?>
+                </p>
+            </div>	
+        </div>
+    </div>
+
+</section>
+<!-- /Section: Formulario PF -->

@@ -50,7 +50,7 @@ class PedidoDAO extends AbstractDAO {
             //Valor do pedido está igual ao valor do produto, isso é parcial,
             //até o sistema estiver completo e aceitar mais de um produto p/ pedido
             $pdo->bindValue(7, $bean->getVlProduto());
-            $pdo->bindValue(8, $qtPedidos['COUNT(*)']);
+            $pdo->bindValue(8, $qtPedidos['MAX(cd_pedido)']);
 
             $pdo->execute();
             
@@ -99,7 +99,7 @@ class PedidoDAO extends AbstractDAO {
 
     public function qtPedidos() {
         try {
-            $query = "SELECT COUNT(*) FROM pedido";
+            $query = "SELECT MAX(cd_pedido) FROM pedido";
 
             $pdo = $this->con->getConexao()->prepare($query);
 
