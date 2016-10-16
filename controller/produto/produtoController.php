@@ -21,6 +21,10 @@ if ($acao == 'cadastrar' || $acao == 'alterar') {
         'nm_categoria' => $_POST['nmCategoria'],
         'nm_tipo_produto' => $_POST['nmTipoProduto'],
         'ds_produto' => $_POST['dsProduto'],
+        'im_produto' => $_FILES['im_produto'],
+        'tam_produto' => $_FILES['im_produto']['size'],
+        'tipo_produto' => $_FILES['im_produto']['type'],
+        'nome_produto' => $_FILES['im_produto']['name'],
         'nm_situacao' => 'A'
     ];
 }
@@ -76,5 +80,12 @@ switch ($acao) {
         $bo->carregaProduto($produto);
         echo "<script>window.location.assign('../../view/produto/produtoView.php')</script>";
         break;
-}
 
+    
+    case 'buscarProduto':
+        $produtos = $bo->buscarProduto($_POST['nmProduto']);
+        echo "<script>window.location.assign('../../view/produto/listaProdutoCliente.php')</script>";
+        break;
+        
+
+}
