@@ -1,10 +1,45 @@
 <?php
 include_once '../../controller/produto/produto.php';
 ?>
-<?php session_start() ?>
-<!DOCTYPE html>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/cabecalho.php'; ?>
 
-<?php include_once './cabecalhoProduto.php'; ?> 
+<section id="intro" class="intro-pages">
+    <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
+    <div id="navigation">
+        <nav class="navbar navbar-custom" role="navigation">
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <?php if ($_SESSION['tpUsuario'] == 'cliente') { ?>
+                        <li><a href="../cliente/formCliente.php?acao=alterar">Alterar Cadastro</a></li>
+                        <li><a href="../../controller/cliente/clienteController.php?acao=desativar" onclick="return confirmarDesativarConta();">Desativar Cadastro</a></li>
+                    <?php } else { ?>
+                        <li><a href="../confeiteiro/formConfeiteiro.php?acao=alterar">Alterar Cadastro</a></li>
+                        <li><a href="../../controller/confeiteiro/confeiteiroController.php??acao=desativar" onclick="return confirmarDesativarConta();">Desativar Cadastro</a></li>                           
+                    <?php } ?>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="../../controller/login/login.php?acao=deslogar">SAIR</a></li>
+                </ul>
+            </div>         
+
+        </nav>
+    </div>
+    <div class="slogan">
+        <?php if ($_SESSION['tpUsuario'] == 'cliente') { ?>
+            <a href="../cliente/indexCliente.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
+            <h3>Cliente</h3>
+        <?php } else { ?>
+
+            <br>
+            <a href="../confeiteiro/indexConfeiteiro.php"><img src="../bootstrap/img/logo.png" alt="" /></a>
+            <h3>Confeiteiro</h3>
+        <?php } ?>
+    </div>
+</section>
 <section id="produto" class="home-section text-center">    
     <div class="heading-contact">
         <div class="container">
@@ -36,8 +71,6 @@ include_once '../../controller/produto/produto.php';
                         <td align="center"> <?= $produto['ds_produto'] ?></td> 
                         <td align="center"> <?= $produto['nm_tipo_produto'] ?></td> 
 
-
-
                         <td align="center"> 
                             <form action="produtoView.php" method="POST">
                                 <input type="hidden" name="cdProduto" value="<?= $produto['cd_produto'] ?>"/>
@@ -46,6 +79,7 @@ include_once '../../controller/produto/produto.php';
                                 <input type="hidden" name="vlProduto" value="<?= $produto['vl_produto'] ?>"/>
                                 <input type="hidden" name="dsProduto" value="<?= $produto['ds_produto'] ?>"/>
                                 <input type="hidden" name="nmTipoProduto" value="<?= $produto['nm_tipo_produto'] ?>"/>
+                                <input type="hidden" name="imgProduto" value="<?= $produto['nm_caminho_imagem'] ?>"/>
                                 <button class="btn btn-danger" type="submit">Visualizar </button>  
                             </form>
                         </td>
@@ -63,6 +97,6 @@ include_once '../../controller/produto/produto.php';
     </div> 
 </section>       
 <!-- ?php include_once $_SERVER['DOCUMENT_ROOT'] . 'Mar-de-Sabores/Mar-de-Sabores/rodape.php'; ?>-->
-<?php include_once '../../view/produto/rodape.php'; ?> 
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/rodape.php'; ?>
 
 

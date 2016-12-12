@@ -37,4 +37,4 @@
     </tbody>
     </table> 
 <?php } ?>
-<?php include_once 'rodape.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/marDeSabores/marDeSabores/view/rodape.php'; ?>

@@ -25,8 +25,9 @@ class ClienteBO extends AbstractBO {
 
         $validacao->validaEmail($bean->getNmEmail());
         $this->findEmailByEmail($bean->getNmEmail());
-
+        
         return $this->dao->cadastrarCliente($bean);
+        
     }
 
     function desativarCliente($bean) {

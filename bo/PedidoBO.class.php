@@ -13,6 +13,7 @@ class PedidoBO extends AbstractBO {
         $data = date('Y-m-d');
         
         $this->dao->cadastrarPedido($dados,$data,$bean);
+        
         $qtPedidos = $this->dao->qtPedidos();
         $this->dao->cadastrarProdutoPedido($bean,$data,$qtPedidos);
         

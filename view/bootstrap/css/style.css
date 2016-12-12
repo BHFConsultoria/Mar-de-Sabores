@@ -87,7 +87,7 @@ img.img-responsive {
 }
 
 .navbar-brand {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 
@@ -125,7 +125,7 @@ img.img-responsive {
     letter-spacing: 1px;
     color: #444;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 
@@ -148,7 +148,6 @@ img.img-responsive {
     background-color: rgba(255,255,255,.2);
 }
 
-.navbar-toggle {
     padding: 4px 6px;
     font-size: 14px;
     color: #fff;
@@ -389,8 +388,7 @@ hr {
 }
 
 .container img {
-    max-width:200px;
-    max-height:150px;
+    
     width: auto;
     height: auto;
 }
@@ -418,11 +416,11 @@ hr {
     position:relative;	
     background: url(../img/cakes.jpg) no-repeat top center;
     background-size: cover;
-    border-bottom: 4px solid #b02041;
+    border-bottom: 2px solid #b02041;
 }
 
 #intro.intro-pages {
-    padding:50px 0 150px 0;
+    padding:5px 0 150px 0;
 }
 
 .intro-pages .slogan {
@@ -836,7 +834,7 @@ a.btn:hover {
     .page-scroll a {
         width: 40px;
         height: 40px;
-        margin-top: 10px;
+        margin-top: 5px;
         font-size: 20px;
     }
 

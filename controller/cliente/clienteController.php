@@ -9,7 +9,6 @@ $bo = new ClienteBO();
 $acao = $_REQUEST['acao'];
 
 if ($acao == 'cadastrar' || $acao == 'alterar') {
-
     $dados = [
         'cd_cliente' => '',
         'nm_cliente' => $_POST['nmCliente'],

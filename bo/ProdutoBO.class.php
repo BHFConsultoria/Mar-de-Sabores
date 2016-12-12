@@ -7,9 +7,9 @@ class ProdutoBO extends AbstractBO {
     function __construct() {
         $this->dao = new ProdutoDAO();
     }
-
-    function cadastrarProduto($bean) {
-        return $this->dao->cadastrarProduto($bean);
+    
+    function cadastrarProduto($bean,$img) {
+        return $this->dao->cadastrarProduto($bean,$img);
     }
 
     function listaProduto($cdConfeiteiro) {

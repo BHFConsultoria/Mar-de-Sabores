@@ -21,18 +21,15 @@ if ($acao == 'cadastrar' || $acao == 'alterar') {
         'nm_categoria' => $_POST['nmCategoria'],
         'nm_tipo_produto' => $_POST['nmTipoProduto'],
         'ds_produto' => $_POST['dsProduto'],
-        'im_produto' => $_FILES['im_produto'],
-        'tam_produto' => $_FILES['im_produto']['size'],
-        'tipo_produto' => $_FILES['im_produto']['type'],
-        'nome_produto' => $_FILES['im_produto']['name'],
         'nm_situacao' => 'A'
     ];
+    $img = $_FILES['imgProduto'];
 }
 switch ($acao) {
 
     case 'cadastrar':
         $bean = $bo->populaBean($dados);
-        $bo->cadastrarProduto($bean);
+        $bo->cadastrarProduto($bean,$img);
         echo "<script>alert('Produto Cadastrado com Sucesso!!!')</script>";
         echo "<script>window.location.assign('../../view/produto/produto.php')</script>";
         break;
