@@ -1,7 +1,7 @@
 <?php
 include_once '../../controller/produto/produto.php';
 ?>
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/cabecalho.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/cabecalho.php'; ?>
 <section id="intro" class="intro-pages">
     <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>
     <div id="navigation">
@@ -113,6 +113,6 @@ include_once '../../controller/produto/produto.php';
     </div> 
 </section>       
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/rodape.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/rodape.php'; ?>
 
 

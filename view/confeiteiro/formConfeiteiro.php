@@ -2,7 +2,7 @@
 $menuCadas = 1;
 ?>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/cabecalho.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/cabecalho.php'; ?>
 
 <section id="intro" class="intro-pages">
     <?php if (isset($menuCadas)) { ?>
@@ -205,4 +205,4 @@ $menuCadas = 1;
 </section>
 <!-- /Section: Formulario PF -->
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/rodape.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/rodape.php'; ?>

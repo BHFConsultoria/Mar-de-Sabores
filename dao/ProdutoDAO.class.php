@@ -73,7 +73,7 @@ class ProdutoDAO extends AbstractDAO {
 
     function cadastrarProduto($bean, $img) {
         try {
-            $caminhoProjeto = '/marDeSabores/marDeSabores/datafiles/imagens/produtos/confeiteiro_';
+            $caminhoProjeto = '/datafiles/imagens/produtos/confeiteiro_';
             $caminhoDiretorio = $_SERVER['DOCUMENT_ROOT'] . $caminhoProjeto . $bean->getConfeiteiroCdConfeiteiro();
             
             $extensao = strtolower(substr($img['name'], -4));
