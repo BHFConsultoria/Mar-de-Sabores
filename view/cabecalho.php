@@ -2,7 +2,7 @@
 if (!isset($_SESSION))
     session_start();
 
-$caminhoCss = '/marDeSabores/marDeSabores/view';
+$caminhoCss = '/view';
 ?>
 <html lang="en">
 

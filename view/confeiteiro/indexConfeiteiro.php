@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/cabecalho.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/cabecalho.php'; ?>
 
 <section id="intro" class="intro-pages">
     <div id="navigation">
@@ -63,4 +63,4 @@
     </div> 
 </section>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/rodape.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/rodape.php'; ?>

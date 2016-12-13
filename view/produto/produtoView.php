@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/cabecalho.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/cabecalho.php'; ?>
 
 <section id="intro" class="intro-pages">
     <h4>Olá <?= $_SESSION['nome'] ?>, Seja bem vindo!</h4>

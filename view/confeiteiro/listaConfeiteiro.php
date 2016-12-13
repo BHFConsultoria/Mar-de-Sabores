@@ -1,7 +1,7 @@
 <?php
 include_once '../../controller/confeiteiro/confeiteiroController.php';
 ?>
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/cabecalho.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/cabecalho.php'; ?>
 <!-- Section: intro -->
 <section id="intro" class="intro-pages">
     <div id="navigation">
@@ -46,4 +46,4 @@ include_once '../../controller/confeiteiro/confeiteiroController.php';
         </table>
     </div>
 </section> 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/marDeSabores/marDeSabores/view/rodape.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/view/rodape.php'; ?>
